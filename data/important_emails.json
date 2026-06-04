@@ -1,0 +1,227 @@
+{
+    "HIGH": [
+        {
+            "id": 29,
+            "subject": "System anomaly detected",
+            "sender": "alerts@watchtower.ai",
+            "body": "An anomaly has been detected in system behavior that deviates from normal operational patterns. Our engineering team is currently investigating the issue to determine its cause and potential impact on services.",
+            "time_received": "2026-06-04 10:00:26",
+            "important": true,
+            "priority": "HIGH",
+            "category": "SERVER_ANOMALY",
+            "reason": "System anomaly detected, indicating potential disruption to services"
+        },
+        {
+            "id": 28,
+            "subject": "Multiple failed logins",
+            "sender": "alerts@watchtower.ai",
+            "body": "We detected multiple failed login attempts within a short time window. This behavior may indicate unauthorized access attempts. We recommend reviewing account security and enabling additional authentication if not already active.",
+            "time_received": "2026-06-04 09:59:58",
+            "important": true,
+            "priority": "HIGH",
+            "category": "SECURITY_ALERT",
+            "reason": "The email indicates suspicious account activity and recommends reviewing account security, which is a high-priority security alert."
+        },
+        {
+            "id": 27,
+            "subject": "Firewall triggered",
+            "sender": "alerts@watchtower.ai",
+            "body": "A firewall rule has been triggered due to suspicious request patterns detected in network traffic. The system has automatically blocked the affected requests to maintain security. No further action is required unless alerts continue.",
+            "time_received": "2026-06-04 09:59:47",
+            "important": true,
+            "priority": "HIGH",
+            "category": "SECURITY_ALERT",
+            "reason": "The email indicates a security alert due to suspicious request patterns detected in network traffic, which requires immediate attention."
+        },
+        {
+            "id": 26,
+            "subject": "Traffic spike detected",
+            "sender": "alerts@watchtower.ai",
+            "body": "Our monitoring system has detected an unusual spike in incoming traffic across multiple services. This may indicate increased user activity or potential automated requests. We are currently analyzing the traffic source to ensure system stability.",
+            "time_received": "2026-06-04 09:59:39",
+            "important": true,
+            "priority": "HIGH",
+            "category": "SERVER_ANOMALY",
+            "reason": "The email indicates an unusual spike in incoming traffic, which may impact system stability."
+        },
+        {
+            "id": 15,
+            "subject": "Login from new location",
+            "sender": "security@authshield.app",
+            "body": "We detected a login attempt from a location that has not been previously associated with your account. For your protection, we recommend verifying this activity. If you recognize this login, no further action is needed.",
+            "time_received": "2026-06-04 09:57:50",
+            "important": true,
+            "priority": "HIGH",
+            "category": "SECURITY_ALERT",
+            "reason": "Security alert detected, potential unauthorized access to account"
+        },
+        {
+            "id": 13,
+            "subject": "Suspicious login blocked",
+            "sender": "security@authshield.app",
+            "body": "Our security system has automatically blocked a suspicious login attempt to your account. The attempt was flagged due to unusual behavior patterns and mismatched authentication signals. No action is required unless you notice additional unauthorized activity.",
+            "time_received": "2026-06-04 09:57:34",
+            "important": true,
+            "priority": "HIGH",
+            "category": "SECURITY_ALERT",
+            "reason": "The email is a security alert from the account's security system, indicating a suspicious login attempt."
+        },
+        {
+            "id": 11,
+            "subject": "New login detected",
+            "sender": "security@authshield.app",
+            "body": "We detected a new login to your account from a device that has not been previously recognized. The login originated from a Windows device in a new location. If this activity was not initiated by you, we strongly recommend reviewing your account security settings immediately.",
+            "time_received": "2026-06-04 09:57:05",
+            "important": true,
+            "priority": "HIGH",
+            "category": "SECURITY_ALERT",
+            "reason": "Security alert detected, indicating potential unauthorized access to the account."
+        },
+        {
+            "id": 8,
+            "subject": "Database latency spike",
+            "sender": "ops@cloud-status.io",
+            "body": "We have observed a significant spike in database latency across primary clusters. This may impact query performance and cause delays in dashboard loading times. Our database engineers are actively analyzing query patterns and system load to identify the underlying cause.",
+            "time_received": "2026-06-04 09:56:25",
+            "important": true,
+            "priority": "HIGH",
+            "category": "SERVER_ANOMALY",
+            "reason": "Database latency spike may impact query performance and cause delays in dashboard loading times, indicating a system anomaly."
+        },
+        {
+            "id": 7,
+            "subject": "Region outage investigation",
+            "sender": "ops@cloud-status.io",
+            "body": "We are currently investigating a potential outage affecting the EU-west region. Early indicators suggest elevated error rates and delayed responses from multiple services. Our infrastructure team is prioritizing resolution and will provide updates as soon as more information becomes available.",
+            "time_received": "2026-06-04 09:56:12",
+            "important": true,
+            "priority": "HIGH",
+            "category": "SERVER_DOWN",
+            "reason": "The email is an infrastructure alert regarding a potential outage affecting the EU-west region."
+        },
+        {
+            "id": 6,
+            "subject": "Service degradation detected",
+            "sender": "ops@cloud-status.io",
+            "body": "Our monitoring systems have detected service degradation affecting a subset of users. You may experience slower response times or intermittent failures when accessing APIs or dashboard services. Our engineering team is actively investigating the root cause and working on mitigation steps to restore normal performance.",
+            "time_received": "2026-06-04 09:56:00",
+            "important": true,
+            "priority": "HIGH",
+            "category": "SERVER_DOWN",
+            "reason": "Service degradation detected, which may impact user experience and requires immediate attention from the engineering team."
+        },
+        {
+            "id": 5,
+            "subject": "Billing mismatch detected",
+            "sender": "billing@nova-payments.com",
+            "body": "During our routine audit of your account, we detected a mismatch in your billing cycle configuration. This may lead to incorrect invoicing or payment delays. We recommend reviewing your billing settings and correcting any inconsistencies to ensure accurate charges moving forward.",
+            "time_received": "2026-06-04 09:55:49",
+            "important": true,
+            "priority": "HIGH",
+            "category": "PAYMENT_ISSUE",
+            "reason": "Billing mismatch detected, which may lead to incorrect invoicing or payment delays."
+        },
+        {
+            "id": 4,
+            "subject": "Card expired notice",
+            "sender": "billing@nova-payments.com",
+            "body": "We noticed that the card linked to your account has expired. To continue using our services without interruption, please update your payment details immediately. An expired card may result in failed transactions and potential suspension of your subscription services.",
+            "time_received": "2026-06-04 09:55:43",
+            "important": true,
+            "priority": "HIGH",
+            "category": "PAYMENT_ISSUE",
+            "reason": "The email is a notification about an expired card linked to the account, which may result in failed transactions and potential suspension of subscription services."
+        },
+        {
+            "id": 2,
+            "subject": "Invoice due soon",
+            "sender": "billing@nova-payments.com",
+            "body": "This is a reminder that your latest invoice will be due in 3 days. We recommend reviewing your billing dashboard to ensure that your payment method is valid and has sufficient balance. Late payments may result in temporary suspension of services, so please take action before the due date.",
+            "time_received": "2026-06-04 09:55:21",
+            "important": true,
+            "priority": "HIGH",
+            "category": "PAYMENT_ISSUE",
+            "reason": "The email is a reminder about an impending payment deadline, which may result in temporary suspension of services if not addressed."
+        },
+        {
+            "id": 1,
+            "subject": "Payment failed for your subscription",
+            "sender": "billing@nova-payments.com",
+            "body": "We attempted to process your subscription payment, but unfortunately the transaction was declined by your bank. This could be due to insufficient funds, an expired card, or a temporary issue with your payment provider. Please update your billing information as soon as possible to avoid service interruption and ensure uninterrupted access to your account features.",
+            "time_received": "2026-06-04 09:55:10",
+            "important": true,
+            "priority": "HIGH",
+            "category": "PAYMENT_ISSUE",
+            "reason": "The email is a notification of a payment failure, which requires immediate attention to avoid service interruption."
+        }
+    ],
+    "MEDIUM": [
+        {
+            "id": 20,
+            "subject": "Offer discussion invitation",
+            "sender": "hr@careerhub.io",
+            "body": "We are happy to inform you that we would like to proceed with an offer discussion. During this stage, we will go over role details, compensation structure, and expectations. Please let us know your availability for a discussion session.",
+            "time_received": "2026-06-04 09:58:45",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email is an invitation for an offer discussion, indicating a potential job opportunity, but it is not urgent or critical."
+        },
+        {
+            "id": 18,
+            "subject": "Interview scheduled",
+            "sender": "hr@careerhub.io",
+            "body": "We are pleased to inform you that your interview has been scheduled for next week. The session will include both technical and behavioral questions. Please confirm your availability so that we can finalize the arrangement and send the meeting details.",
+            "time_received": "2026-06-04 09:58:25",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "REMINDER",
+            "reason": "The email is a routine reminder for an interview, but it requires a response to confirm availability."
+        },
+        {
+            "id": 16,
+            "subject": "Application shortlisted",
+            "sender": "hr@careerhub.io",
+            "body": "We are pleased to inform you that your application has been shortlisted for the next stage of our hiring process. Our team was impressed by your background and skills. You will soon receive details regarding the next assessment or interview round.",
+            "time_received": "2026-06-04 09:58:04",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email is a notification about a job application being shortlisted, which may require the recipient's attention and action in the near future."
+        },
+        {
+            "id": 14,
+            "subject": "Two-factor authentication enabled",
+            "sender": "security@authshield.app",
+            "body": "Two-factor authentication has been successfully enabled on your account. This adds an additional layer of protection by requiring a verification code during login attempts. We strongly recommend keeping this feature enabled to enhance account security.",
+            "time_received": "2026-06-04 09:57:45",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "SECURITY_ALERT",
+            "reason": "Security alert notification regarding two-factor authentication enabled on the account"
+        },
+        {
+            "id": 12,
+            "subject": "Password reset request",
+            "sender": "security@authshield.app",
+            "body": "A password reset request has been received for your account. If you initiated this request, you can proceed using the secure link provided. If you did not request this change, please ignore this message and consider updating your account security settings to prevent unauthorized access.",
+            "time_received": "2026-06-04 09:57:19",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "SECURITY_ALERT",
+            "reason": "Security alert or suspicious account activity detected, requiring user action to verify password reset request."
+        },
+        {
+            "id": 9,
+            "subject": "Partial service recovery",
+            "sender": "ops@cloud-status.io",
+            "body": "Following recent service disruption, we are happy to report that systems are gradually recovering. Most core services are now operational, although some users may still experience intermittent delays. We continue to monitor the system closely to ensure full stability.",
+            "time_received": "2026-06-04 09:56:39",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "SERVER_DOWN",
+            "reason": "The email reports a partial service recovery after a recent disruption, indicating a server-related issue."
+        }
+    ],
+    "LOW": []
+}

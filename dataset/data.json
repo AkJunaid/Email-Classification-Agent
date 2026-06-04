@@ -1,0 +1,187 @@
+[
+  {
+    "id": 1,
+    "sender": "billing@nova-payments.com",
+    "subject": "Payment failed for your subscription",
+    "body": "We attempted to process your subscription payment, but unfortunately the transaction was declined by your bank. This could be due to insufficient funds, an expired card, or a temporary issue with your payment provider. Please update your billing information as soon as possible to avoid service interruption and ensure uninterrupted access to your account features."
+  },
+  {
+    "id": 2,
+    "sender": "billing@nova-payments.com",
+    "subject": "Invoice due soon",
+    "body": "This is a reminder that your latest invoice will be due in 3 days. We recommend reviewing your billing dashboard to ensure that your payment method is valid and has sufficient balance. Late payments may result in temporary suspension of services, so please take action before the due date."
+  },
+  {
+    "id": 3,
+    "sender": "billing@nova-payments.com",
+    "subject": "Refund initiated successfully",
+    "body": "We are pleased to inform you that your refund request has been processed successfully. The refunded amount will be credited to your original payment method within 3 to 5 business days depending on your bank’s processing time. If you do not see the amount reflected after this period, please contact support."
+  },
+  {
+    "id": 4,
+    "sender": "billing@nova-payments.com",
+    "subject": "Card expired notice",
+    "body": "We noticed that the card linked to your account has expired. To continue using our services without interruption, please update your payment details immediately. An expired card may result in failed transactions and potential suspension of your subscription services."
+  },
+  {
+    "id": 5,
+    "sender": "billing@nova-payments.com",
+    "subject": "Billing mismatch detected",
+    "body": "During our routine audit of your account, we detected a mismatch in your billing cycle configuration. This may lead to incorrect invoicing or payment delays. We recommend reviewing your billing settings and correcting any inconsistencies to ensure accurate charges moving forward."
+  },
+
+  {
+    "id": 6,
+    "sender": "ops@cloud-status.io",
+    "subject": "Service degradation detected",
+    "body": "Our monitoring systems have detected service degradation affecting a subset of users. You may experience slower response times or intermittent failures when accessing APIs or dashboard services. Our engineering team is actively investigating the root cause and working on mitigation steps to restore normal performance."
+  },
+  {
+    "id": 7,
+    "sender": "ops@cloud-status.io",
+    "subject": "Region outage investigation",
+    "body": "We are currently investigating a potential outage affecting the EU-west region. Early indicators suggest elevated error rates and delayed responses from multiple services. Our infrastructure team is prioritizing resolution and will provide updates as soon as more information becomes available."
+  },
+  {
+    "id": 8,
+    "sender": "ops@cloud-status.io",
+    "subject": "Database latency spike",
+    "body": "We have observed a significant spike in database latency across primary clusters. This may impact query performance and cause delays in dashboard loading times. Our database engineers are actively analyzing query patterns and system load to identify the underlying cause."
+  },
+  {
+    "id": 9,
+    "sender": "ops@cloud-status.io",
+    "subject": "Partial service recovery",
+    "body": "Following recent service disruption, we are happy to report that systems are gradually recovering. Most core services are now operational, although some users may still experience intermittent delays. We continue to monitor the system closely to ensure full stability."
+  },
+  {
+    "id": 10,
+    "sender": "ops@cloud-status.io",
+    "subject": "All systems operational",
+    "body": "We are pleased to confirm that all systems are now fully operational. After thorough monitoring and validation, no ongoing incidents or performance issues have been detected. Services are functioning normally, and we will continue proactive monitoring to ensure stability."
+  },
+
+  {
+    "id": 11,
+    "sender": "security@authshield.app",
+    "subject": "New login detected",
+    "body": "We detected a new login to your account from a device that has not been previously recognized. The login originated from a Windows device in a new location. If this activity was not initiated by you, we strongly recommend reviewing your account security settings immediately."
+  },
+  {
+    "id": 12,
+    "sender": "security@authshield.app",
+    "subject": "Password reset request",
+    "body": "A password reset request has been received for your account. If you initiated this request, you can proceed using the secure link provided. If you did not request this change, please ignore this message and consider updating your account security settings to prevent unauthorized access."
+  },
+  {
+    "id": 13,
+    "sender": "security@authshield.app",
+    "subject": "Suspicious login blocked",
+    "body": "Our security system has automatically blocked a suspicious login attempt to your account. The attempt was flagged due to unusual behavior patterns and mismatched authentication signals. No action is required unless you notice additional unauthorized activity."
+  },
+  {
+    "id": 14,
+    "sender": "security@authshield.app",
+    "subject": "Two-factor authentication enabled",
+    "body": "Two-factor authentication has been successfully enabled on your account. This adds an additional layer of protection by requiring a verification code during login attempts. We strongly recommend keeping this feature enabled to enhance account security."
+  },
+  {
+    "id": 15,
+    "sender": "security@authshield.app",
+    "subject": "Login from new location",
+    "body": "We detected a login attempt from a location that has not been previously associated with your account. For your protection, we recommend verifying this activity. If you recognize this login, no further action is needed."
+  },
+
+  {
+    "id": 16,
+    "sender": "hr@careerhub.io",
+    "subject": "Application shortlisted",
+    "body": "We are pleased to inform you that your application has been shortlisted for the next stage of our hiring process. Our team was impressed by your background and skills. You will soon receive details regarding the next assessment or interview round."
+  },
+  {
+    "id": 17,
+    "sender": "hr@careerhub.io",
+    "subject": "Coding assignment details",
+    "body": "As part of the next stage of your application process, we would like you to complete a technical coding assignment. This task is designed to evaluate your problem-solving skills and coding proficiency. Please ensure submission within the given timeframe."
+  },
+  {
+    "id": 18,
+    "sender": "hr@careerhub.io",
+    "subject": "Interview scheduled",
+    "body": "We are pleased to inform you that your interview has been scheduled for next week. The session will include both technical and behavioral questions. Please confirm your availability so that we can finalize the arrangement and send the meeting details."
+  },
+  {
+    "id": 19,
+    "sender": "hr@careerhub.io",
+    "subject": "Application under review",
+    "body": "Your application is currently under review by our hiring team. This process may take some time as we carefully evaluate all candidates. We appreciate your patience and will update you as soon as a decision has been made."
+  },
+  {
+    "id": 20,
+    "sender": "hr@careerhub.io",
+    "subject": "Offer discussion invitation",
+    "body": "We are happy to inform you that we would like to proceed with an offer discussion. During this stage, we will go over role details, compensation structure, and expectations. Please let us know your availability for a discussion session."
+  },
+
+  {
+    "id": 21,
+    "sender": "team@devflow.io",
+    "subject": "Standup moved",
+    "body": "Today's daily standup meeting has been moved by 30 minutes due to scheduling adjustments. Please ensure you adjust your calendar accordingly. We will still cover all planned updates, blockers, and progress reports during the session."
+  },
+  {
+    "id": 22,
+    "sender": "team@devflow.io",
+    "subject": "Client meeting rescheduled",
+    "body": "The client has requested to reschedule today's meeting due to unforeseen conflicts. The new timing will be shared shortly. Please remain available and check your calendar updates for the revised schedule."
+  },
+  {
+    "id": 23,
+    "sender": "team@devflow.io",
+    "subject": "Sprint planning notes",
+    "body": "We are sharing the sprint planning notes ahead of tomorrow's session. These include task breakdowns, priorities, and assigned responsibilities. Please review the document in advance so we can have a productive discussion."
+  },
+  {
+    "id": 24,
+    "sender": "team@devflow.io",
+    "subject": "Quick sync request",
+    "body": "We would like to request a quick sync later today to discuss ongoing project updates. This session will help align priorities and address any blockers. Please confirm your availability so we can schedule accordingly."
+  },
+  {
+    "id": 25,
+    "sender": "team@devflow.io",
+    "subject": "Roadmap update",
+    "body": "We are currently updating the project roadmap to reflect new priorities and recent changes. This includes adjustments to feature timelines and resource allocation. Please review the updated roadmap once it is shared."
+  },
+
+  {
+    "id": 26,
+    "sender": "alerts@watchtower.ai",
+    "subject": "Traffic spike detected",
+    "body": "Our monitoring system has detected an unusual spike in incoming traffic across multiple services. This may indicate increased user activity or potential automated requests. We are currently analyzing the traffic source to ensure system stability."
+  },
+  {
+    "id": 27,
+    "sender": "alerts@watchtower.ai",
+    "subject": "Firewall triggered",
+    "body": "A firewall rule has been triggered due to suspicious request patterns detected in network traffic. The system has automatically blocked the affected requests to maintain security. No further action is required unless alerts continue."
+  },
+  {
+    "id": 28,
+    "sender": "alerts@watchtower.ai",
+    "subject": "Multiple failed logins",
+    "body": "We detected multiple failed login attempts within a short time window. This behavior may indicate unauthorized access attempts. We recommend reviewing account security and enabling additional authentication if not already active."
+  },
+  {
+    "id": 29,
+    "sender": "alerts@watchtower.ai",
+    "subject": "System anomaly detected",
+    "body": "An anomaly has been detected in system behavior that deviates from normal operational patterns. Our engineering team is currently investigating the issue to determine its cause and potential impact on services."
+  },
+  {
+    "id": 30,
+    "sender": "alerts@watchtower.ai",
+    "subject": "Security scan completed",
+    "body": "A full security scan has been completed across all monitored systems. No critical vulnerabilities were found during this scan. We will continue to run periodic checks to ensure ongoing system safety and reliability."
+  }
+]

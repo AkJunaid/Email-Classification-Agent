@@ -1,0 +1,13 @@
+services:
+  email-agent:
+    build: ./app
+    container_name: email_agent_dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./app:/app
+      - ./dataset:/app/dataset:ro   # mock emails source (read-only)
+      - ./data:/app/data            # runtime state — persists across restarts
+    env_file:
+      - .env
+    restart: unless-stopped
