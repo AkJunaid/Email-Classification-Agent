@@ -9,14 +9,14 @@ An intelligent email classification system that automatically identifies and pri
 ### Prerequisites
 
 - **Docker** & **Docker Compose** (recommended)
-- A **Groq API key** — [get one here](https://console.groq.com/)
+- A **Groq API key** — 
 
 ### 1. Environment variables
 
 Create a `.env` file in the project root:
 
 ```env
-GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+GROQ_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 ### 2. Run with Docker Compose
@@ -167,6 +167,8 @@ The dashboard refreshes every **10 seconds** via `streamlit-autorefresh` (falls 
 ---
 
 ## Limitations
+
+**Groq API used** - Used only Groq Api using llama-3.1-8b-instant
 
 - **Mock dataset only** — the included dataset contains 30 pre-written mock emails. To use real emails, you would need to replace or extend `dataset/data.json` (or wire `agent.py` to an actual email source like IMAP).
 - **No email fetching from real providers** — the system does not connect to Gmail, Outlook, or any SMTP/IMAP server. It only reads from the local JSON dataset.
