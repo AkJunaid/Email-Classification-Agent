@@ -180,10 +180,4 @@ The dashboard refreshes every **10 seconds** via `streamlit-autorefresh` (falls 
 
 - **Mock dataset only** — the included dataset contains 30 pre-written mock emails. To use real emails, you would need to replace or extend `dataset/data.json` (or wire `agent.py` to an actual email source like IMAP).
 - **No email fetching from real providers** — the system does not connect to Gmail, Outlook, or any SMTP/IMAP server. It only reads from the local JSON dataset.
-- **LLM dependency** — requires an active internet connection and a valid Groq API key. If Groq is unreachable, the agent will log errors and skip emails. Rate limits or API outages will halt classification.
-- **No restore for read emails** — once an email is marked as read (dismissed), there is no undo or restore functionality.
-- **Single-user** — the dashboard has no authentication or multi-user support. Anyone with access to port 8501 can view and dismiss emails.
-- **No re-classification** — emails are classified once. Re-processing dismissed or already-classified emails requires manually clearing `data/processed_ids.json`.
-- **No email sending** — the agent cannot reply to or forward emails. It only classifies and displays them.
-- **Streamlit refresh inefficiency** — the 10-second auto-refresh re-renders the entire page rather than using WebSocket-based partial updates, which may be noticeable with a large number of emails.
 - **Priority buckets are fixed** — all important emails fall into HIGH / MEDIUM / LOW. There is no custom priority tagging or user-configurable rules.
