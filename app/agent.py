@@ -91,12 +91,15 @@ class EmailSimulator(threading.Thread):
                 time.sleep(10)
                 continue
 
-            inbox     = load_json(INBOX_FILE, [])
-            inbox_ids = {e.get("id") for e in inbox}
-            pending   = [e for e in dataset if e.get("id") not in inbox_ids]
+            inbox         = load_json(INBOX_FILE, [])
+            processed_ids = load_json(PROCESSED_IDS_FILE, [])
+            inbox_ids     = {e.get("id") for e in inbox}
+            blocked_ids   = inbox_ids | set(processed_ids)
+
+            pending = [e for e in dataset if e.get("id") not in blocked_ids]
 
             if not pending:
-                print("[simulator] all dataset emails delivered, waiting for new ones...")
+                print("[simulator] all dataset emails delivered (all processed), waiting for new ones...")
                 time.sleep(15)
                 continue
 
@@ -228,8 +231,8 @@ def store_result_node(state: AgentState) -> AgentState:
         "time_received": time.strftime("%Y-%m-%d %H:%M:%S"),
         "important":     True,
         "priority":      priority,
-        "category":      classification["category"],
-        "reason":        classification["reason"],
+        "category":      classification.get("category", "OTHER"),
+        "reason":        classification.get("reason", ""),
     }
 
     # Load the priority-sectioned store

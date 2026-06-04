@@ -27,7 +27,6 @@ docker compose up --build
 
 Once running, open the dashboard at **[http://localhost:8501](http://localhost:8501)**.
 
-Emails begin appearing within 5–15 seconds — the simulator drip-feeds them from the built-in 30-email dataset.
 
 To stop:
 ```bash
@@ -63,7 +62,7 @@ streamlit run dashboard.py --server.port=8501
 │   └── data.json         # 30 mock emails used as the data source
 ├── data/                 # Runtime state (persisted across restarts)
 │   ├── inbox.json              # Live inbox queue
-│   ├── processed_ids.json      # IDs already classified
+│   ├── processed_ids.json      # IDs already classified (duplicate prevention)
 │   ├── important_emails.json   # Classified important emails (by priority)
 │   └── dismissed.json          # Marked-as-read email IDs (by priority)
 ├── docker-compose.yml    # Runs both agent and dashboard
@@ -79,7 +78,7 @@ The system runs **two concurrent threads** inside `agent.py`:
 
 ### Thread 1 — Email Simulator
 
-Drip-feeds mock emails from `dataset/data.json` into `data/inbox.json`, one at a time, every 5–15 seconds. It tracks which emails have already been delivered by checking `data/inbox.json`, so it will never duplicate. When all emails are delivered it waits — if new ones are added to the dataset, it picks them up automatically on the next loop.
+Drip-feeds mock emails from `dataset/data.json` into `data/inbox.json`, one at a time, every 5–15 seconds. It checks both the inbox and `data/processed_ids.json` to prevent re-delivering emails that have already been classified. When all emails are delivered it waits — if new ones are added to the dataset, it picks them up automatically on the next loop.
 
 ### Thread 2 — Agent Poller (LangGraph pipeline)
 
@@ -126,6 +125,13 @@ And **NOT IMPORTANT** for:
 - **MEDIUM** — requires attention but not urgent (e.g., interview invites, password reset requests)
 - **LOW** — informational, low-urgency items
 
+### Duplicate Prevention
+
+- Every classified email is recorded in `data/processed_ids.json` immediately after processing
+- The **simulator** checks `processed_ids.json` before delivering any email — already-processed emails are never re-added to the inbox
+- The **agent poller** filters out processed IDs before invoking the pipeline, so even if an email somehow reappears in the inbox, it won't be re-classified
+- On classification errors, the email is still marked as processed to prevent infinite retry loops
+
 ---
 
 ## How the Dashboard Works
@@ -145,6 +151,7 @@ Emails are displayed as **cards** grouped by priority (HIGH → MEDIUM → LOW),
 
 - **Subject** with a blue unread indicator dot
 - **Sender & timestamp**
+- **Important badge** (green "Important: True" label on every classified important email)
 - **Priority badge** (color-coded: red / blue / gray)
 - **Category badge**
 - **Email body**
@@ -163,6 +170,7 @@ The dashboard refreshes every **10 seconds** via `streamlit-autorefresh` (falls 
 
 - **Unread/read state** is stored in `data/dismissed.json` — persists across page refreshes and container restarts
 - **Classified emails** are stored in `data/important_emails.json` — survives restarts
+- **Processed IDs** are stored in `data/processed_ids.json` — prevents duplicate processing across restarts
 
 ---
 

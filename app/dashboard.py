@@ -135,6 +135,7 @@ html, body, [data-testid="stAppViewContainer"] {
 .bM  { background: #ddeeff; color: #0055cc; border: 1px solid #aaccee; }
 .bL  { background: #f0f0f0; color: #666666; border: 1px solid #cccccc; }
 .bC  { background: #f0f0f0; color: #555555; border: 1px solid #cccccc; }
+.bI  { background: #e6ffe6; color: #006600; border: 1px solid #99cc99; }
 
 /* ── Time badge ── */
 .time-badge {
@@ -306,6 +307,8 @@ def render_card(email, tab_key, is_read=False):
                 st.rerun()
 
     with right:
+        important_val = email.get('important', False)
+        important_badge = f'<span class="badge {"bI" if important_val else "bNI"}">Important: {"True" if important_val else "False"}</span>'
         st.markdown(f"""
         <div class="{card_cls}">
             <div class="ecard-title">
@@ -315,6 +318,8 @@ def render_card(email, tab_key, is_read=False):
                 <strong>From:</strong> {email.get('sender','Unknown')}
                 <span class="time-badge"> | {email.get('time_received','—')}</span>
                 &nbsp;&nbsp;
+                {important_badge}
+                &nbsp;
                 <strong>Priority:</strong><span class="badge {badge_cls}">{priority}</span>
                 &nbsp;
                 <strong>Category:</strong><span class="badge bC">{category}</span>
@@ -453,3 +458,5 @@ with tab_read:
                 st.markdown('<div class="section-header sl">Low Priority</div>', unsafe_allow_html=True)
                 for email in read_low:
                     render_card(email, f"read_{filter_}", is_read=True)
+
+
