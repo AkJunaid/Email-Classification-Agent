@@ -9,14 +9,20 @@ An intelligent email classification system that automatically identifies and pri
 ### Prerequisites
 
 - **Docker** & **Docker Compose** (recommended)
-- A **Groq API key** — 
+- A **Groq API key** — get one free at [console.groq.com](https://console.groq.com/keys)
 
-### 1. Environment variables
+### 1. Get a Groq API key & configure `.env`
 
-Create a `.env` file in the project root:
+1. Sign up at **[console.groq.com](https://console.groq.com/)** and create a free API key (starts with `gsk_...`).
+2. Copy `.env.example` to `.env` and paste your key:
+
+```bash
+cp .env.example .env
+# then edit .env and replace gsk_your_api_key_here with your real key
+```
 
 ```env
-GROQ_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 ### 2. Run with Docker Compose
@@ -27,10 +33,18 @@ docker compose up --build
 
 Once running, open the dashboard at **[http://localhost:8501](http://localhost:8501)**.
 
+> **Note:** Emails arrive one at a time every 5–15 seconds — wait a few minutes for the dashboard to populate.
 
 To stop:
 ```bash
 docker compose down
+```
+
+To start fresh (clear all classified emails):
+```bash
+docker compose down
+sudo rm -f data/*.json
+docker compose up --build
 ```
 
 To view the agent's real-time logs:
@@ -108,6 +122,7 @@ The LLM is instructed to mark an email as **IMPORTANT** if it involves:
 - Security alert or suspicious account activity
 - Abnormally high or unexpected invoice
 - System anomaly or critical system warning
+- Low-priority automated or subscription email (e.g. billing reminders, refund notices, subscription updates)
 
 And **NOT IMPORTANT** for:
 
@@ -136,7 +151,7 @@ And **NOT IMPORTANT** for:
 
 ## How the Dashboard Works
 
-The dashboard is a **Streamlit** web app (`dashboard.py`) that reads `data/important_emails.json` and `data/dismissed.json` to display classified emails. It runs with a wide layout, collapsed sidebar, and a custom CSS theme (blue header, red/blue/gray priority colors, white backgrounds).
+The dashboard is a **Streamlit** web app (`dashboard.py`) that reads `data/important_emails.json` and `data/dismissed.json` to display classified emails. It runs with a wide layout, collapsed sidebar, and a custom black & white monochrome CSS theme.
 
 ### Layout
 
@@ -149,10 +164,10 @@ The dashboard is a **Streamlit** web app (`dashboard.py`) that reads `data/impor
 
 Emails are displayed as **cards** grouped by priority (HIGH → MEDIUM → LOW), newest first. Each card shows:
 
-- **Subject** with a blue unread indicator dot
+- **Subject** with a black unread indicator dot
 - **Sender & timestamp**
 - **Important badge** (green "Important: True" label on every classified important email)
-- **Priority badge** (color-coded: red / blue / gray)
+- **Priority badge** (monochrome style: bold black / gray / light gray)
 - **Category badge**
 - **Email body**
 - **AI classification reason** (in an indented italic block)
@@ -178,6 +193,6 @@ The dashboard refreshes every **10 seconds** via `streamlit-autorefresh` (falls 
 
 **Groq API used** - Used only Groq Api using llama-3.1-8b-instant
 
-- **Mock dataset only** — the included dataset contains 30 pre-written mock emails. To use real emails, you would need to replace or extend `dataset/data.json` (or wire `agent.py` to an actual email source like IMAP).
+- **Mock dataset only** — the included dataset contains 200 pre-written mock emails. To use real emails, you would need to replace or extend `dataset/data.json` (or wire `agent.py` to an actual email source like IMAP).
 - **No email fetching from real providers** — the system does not connect to Gmail, Outlook, or any SMTP/IMAP server. It only reads from the local JSON dataset.
 - **Priority buckets are fixed** — all important emails fall into HIGH / MEDIUM / LOW. There is no custom priority tagging or user-configurable rules.

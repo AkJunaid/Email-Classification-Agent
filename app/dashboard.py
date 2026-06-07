@@ -8,7 +8,7 @@ Tabs: Active (Unread) | Read
 - "Mark as Read" moves an email to dismissed.json under its priority section (persists across refresh)
 - No restore functionality
 - Auto-refreshes every 10 s
-- Theme: Blue, Red & White
+- Theme: Black & White (monochrome)
 """
 
 import streamlit as st
@@ -45,7 +45,7 @@ html, body, [data-testid="stAppViewContainer"] {
 
 /* ── Header ── */
 .dash-header {
-    background: #1e3a6f;
+    background: #000000;
     padding: 15px 20px;
     margin-bottom: 15px;
 }
@@ -57,7 +57,7 @@ html, body, [data-testid="stAppViewContainer"] {
 }
 .dash-header p {
     font-size: 12px;
-    color: #cccccc;
+    color: #aaaaaa;
     margin: 5px 0 0;
 }
 
@@ -71,10 +71,10 @@ html, body, [data-testid="stAppViewContainer"] {
 .scard .n { font-size: 28px; font-weight: bold; }
 .scard .l { font-size: 11px; color: #666666; margin-top: 3px; }
 
-.scard.sactive .n { color: #1e3a6f; }
-.scard.sh .n { color: #dc2626; }
-.scard.sm .n { color: #2563eb; }
-.scard.sl .n { color: #888888; }
+.scard.sactive .n { color: #000000; }
+.scard.sh .n { color: #000000; font-weight: bold; }
+.scard.sm .n { color: #555555; }
+.scard.sl .n { color: #999999; }
 
 /* ── Email card ── */
 .ecard {
@@ -87,8 +87,8 @@ html, body, [data-testid="stAppViewContainer"] {
     background: #f5f5f5;
     border-color: #dddddd;
 }
-.ecard-h { border-left: 4px solid #dc2626; }
-.ecard-m { border-left: 4px solid #2563eb; }
+.ecard-h { border-left: 4px solid #000000; }
+.ecard-m { border-left: 4px solid #666666; }
 .ecard-l { border-left: 4px solid #cccccc; }
 .ecard.read { border-left: 4px solid #dddddd; }
 
@@ -115,7 +115,7 @@ html, body, [data-testid="stAppViewContainer"] {
 .ecard-reason {
     font-size: 12px;
     font-style: italic;
-    border-left: 3px solid #2563eb;
+    border-left: 3px solid #000000;
     padding: 6px 10px;
     color: #333333;
 }
@@ -131,11 +131,11 @@ html, body, [data-testid="stAppViewContainer"] {
     font-weight: bold;
     margin-left: 3px;
 }
-.bH  { background: #ffdddd; color: #cc0000; border: 1px solid #ffaaaa; }
-.bM  { background: #ddeeff; color: #0055cc; border: 1px solid #aaccee; }
-.bL  { background: #f0f0f0; color: #666666; border: 1px solid #cccccc; }
+.bH  { background: #e0e0e0; color: #000000; border: 1px solid #000000; font-weight: bold; }
+.bM  { background: #f0f0f0; color: #333333; border: 1px solid #999999; }
+.bL  { background: #f8f8f8; color: #666666; border: 1px solid #cccccc; }
 .bC  { background: #f0f0f0; color: #555555; border: 1px solid #cccccc; }
-.bI  { background: #e6ffe6; color: #006600; border: 1px solid #99cc99; }
+.bI  { background: #ffffff; color: #000000; border: 1px solid #000000; }
 
 /* ── Time badge ── */
 .time-badge {
@@ -148,11 +148,11 @@ div.stButton > button {
     font-size: 12px !important;
     padding: 3px 10px !important;
     background: #ffffff !important;
-    color: #2563eb !important;
-    border: 1px solid #2563eb !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
 }
 div.stButton > button:hover {
-    background: #2563eb !important;
+    background: #000000 !important;
     color: #ffffff !important;
 }
 
@@ -183,7 +183,7 @@ div.stButton > button:hover {
 }
 .stTabs [aria-selected="true"] {
     background: #ffffff !important;
-    color: #1e3a6f !important;
+    color: #000000 !important;
     font-weight: bold !important;
 }
 
@@ -196,19 +196,19 @@ div.stButton > button:hover {
     border: 1px solid;
 }
 .section-header.sh {
-    color: #cc0000;
-    background: #ffeeee;
-    border-color: #ffcccc;
+    color: #000000;
+    background: #e8e8e8;
+    border-color: #000000;
 }
 .section-header.sm {
-    color: #0055cc;
-    background: #eef4ff;
-    border-color: #ccddff;
+    color: #333333;
+    background: #f0f0f0;
+    border-color: #999999;
 }
 .section-header.sl {
     color: #666666;
-    background: #f5f5f5;
-    border-color: #dddddd;
+    background: #f8f8f8;
+    border-color: #cccccc;
 }
 
 /* ── Filter pills ── */
@@ -230,7 +230,7 @@ div.stButton > button:hover {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #2563eb;
+    background: #000000;
     margin-right: 5px;
 }
 </style>
@@ -359,13 +359,13 @@ total_read  = len(read_high) + len(read_medium) + len(read_low)
 st.markdown("""
 <div class="dash-header">
     <h1>Email Classifier Dashboard</h1>
-    <p>AI-classified important emails - live updates every 10 s - emails arrive every 5-15 s</p>
+    <p>AI-classified important emails - live updates - emails arrive every 5-15 s</p>
 </div>
 """, unsafe_allow_html=True)
 
 # ── Stats row: Active (Unread) ─────────────────────────────────────────────────
 st.markdown(
-    '<div style="font-size:11px;font-weight:bold;color:#1e3a6f;margin-bottom:5px;">Active (Unread)</div>',
+    '<div style="font-size:11px;font-weight:bold;color:#000000;margin-bottom:5px;">Active (Unread)</div>',
     unsafe_allow_html=True,
 )
 c1, c2, c3, c4 = st.columns(4)

@@ -33,13 +33,13 @@ from typing import TypedDict, Dict, Any, Optional
 from langchain_groq import ChatGroq
 from langgraph.graph import StateGraph, START, END
 
-# ── Bootstrap ──────────────────────────────────────────────────────────────────
+# ── Bootstrap 
 os.makedirs("/app/data", exist_ok=True)
 os.makedirs("/app/dataset", exist_ok=True)
 
 load_dotenv()
 
-# ── Paths ──────────────────────────────────────────────────────────────────────
+# ── Paths 
 DATASET_FILE          = "/app/dataset/data.json"
 INBOX_FILE            = "/app/data/inbox.json"
 PROCESSED_IDS_FILE    = "/app/data/processed_ids.json"
@@ -50,7 +50,7 @@ SIM_MIN_DELAY  = 5    # seconds between simulated email arrivals
 SIM_MAX_DELAY  = 15
 SAFETY_POLL    = 30   # seconds — agent re-checks inbox even with no file change
 
-# ── Event: fires when inbox file changes ───────────────────────────────────────
+# ── Event: fires when inbox file changes 
 inbox_changed = threading.Event()
 
 
@@ -73,11 +73,11 @@ def save_json(path: str, data) -> None:
     os.replace(tmp, path)
 
 
-# ══════════════════════════════════════════════════════════════════════════════
+
 # EMAIL SIMULATOR THREAD
 # Delivers one email every 5-15 s from dataset into inbox.
 # Loops back to start if all emails are delivered; picks up new ones instantly.
-# ══════════════════════════════════════════════════════════════════════════════
+
 class EmailSimulator(threading.Thread):
     def __init__(self):
         super().__init__(daemon=True, name="EmailSimulator")
@@ -118,10 +118,10 @@ class EmailSimulator(threading.Thread):
             time.sleep(delay)
 
 
-# ══════════════════════════════════════════════════════════════════════════════
+
 # LANGGRAPH PIPELINE  —  3 nodes
 #   START → fetch_email → classify_email → store_result → END
-# ══════════════════════════════════════════════════════════════════════════════
+
 
 class AgentState(TypedDict):
     email:          Dict[str, Any]
@@ -161,6 +161,7 @@ Mark as IMPORTANT (important: true) if:
   - Security alert or suspicious account activity
   - Abnormally high or unexpected invoice
   - System anomaly or critical system warning
+  - Low-priority automated or subscription email (e.g. billing reminders, refund notices, subscription updates)
 
 Mark as NOT IMPORTANT (important: false) if:
   - Routine reminders or meeting notifications
@@ -263,11 +264,11 @@ workflow.add_edge("store_result",   END)
 agent_app = workflow.compile()
 
 
-# ══════════════════════════════════════════════════════════════════════════════
+
 # AGENT POLLER THREAD
 # Event-driven: wakes immediately when inbox_changed is set by the simulator.
 # Also wakes every SAFETY_POLL seconds as a fallback.
-# ══════════════════════════════════════════════════════════════════════════════
+
 def poll_once():
     inbox         = load_json(INBOX_FILE, [])
     processed_ids = load_json(PROCESSED_IDS_FILE, [])
@@ -292,9 +293,9 @@ def run_agent_poller():
         poll_once()
 
 
-# ══════════════════════════════════════════════════════════════════════════════
+
 # MAIN
-# ══════════════════════════════════════════════════════════════════════════════
+
 def main():
     print("=" * 58)
     print("  Email Classifier Agent")
