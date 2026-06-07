@@ -1,16 +1,3 @@
-"""
-dashboard.py — Email Classifier Dashboard
-==========================================
-Reads /app/data/important_emails.json  (structure: {"HIGH":[...], "MEDIUM":[...], "LOW":[...]})
-Reads /app/data/dismissed.json         (structure: {"HIGH":[id,...], "MEDIUM":[...], "LOW":[...]})
-
-Tabs: Active (Unread) | Read
-- "Mark as Read" moves an email to dismissed.json under its priority section (persists across refresh)
-- No restore functionality
-- Auto-refreshes every 10 s
-- Theme: Black & White (monochrome)
-"""
-
 import streamlit as st
 import json
 import os
@@ -24,7 +11,7 @@ except ImportError:
 IMPORTANT_EMAILS_FILE = "/app/data/important_emails.json"
 DISMISSED_FILE        = "/app/data/dismissed.json"
 
-# ── Page config ────────────────────────────────────────────────────────────────
+
 st.set_page_config(
     page_title="Email Classifier Dashboard",
     page_icon=None,
@@ -40,10 +27,8 @@ html, body, [data-testid="stAppViewContainer"] {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ── Hide Streamlit chrome ── */
 #MainMenu, footer, [data-testid="stToolbar"] { display: none !important; }
 
-/* ── Header ── */
 .dash-header {
     background: #000000;
     padding: 15px 20px;
@@ -61,7 +46,6 @@ html, body, [data-testid="stAppViewContainer"] {
     margin: 5px 0 0;
 }
 
-/* ── Stat cards ── */
 .scard {
     border: 1px solid #cccccc;
     padding: 10px;
@@ -76,7 +60,6 @@ html, body, [data-testid="stAppViewContainer"] {
 .scard.sm .n { color: #555555; }
 .scard.sl .n { color: #999999; }
 
-/* ── Email card ── */
 .ecard {
     border: 1px solid #cccccc;
     padding: 12px 15px;
@@ -123,7 +106,6 @@ html, body, [data-testid="stAppViewContainer"] {
     border-left-color: #aaaaaa;
 }
 
-/* ── Badges ── */
 .badge {
     display: inline-block;
     padding: 1px 6px;
@@ -137,13 +119,11 @@ html, body, [data-testid="stAppViewContainer"] {
 .bC  { background: #f0f0f0; color: #555555; border: 1px solid #cccccc; }
 .bI  { background: #ffffff; color: #000000; border: 1px solid #000000; }
 
-/* ── Time badge ── */
 .time-badge {
     font-size: 11px;
     color: #888888;
 }
 
-/* ── Buttons ── */
 div.stButton > button {
     font-size: 12px !important;
     padding: 3px 10px !important;
@@ -156,7 +136,6 @@ div.stButton > button:hover {
     color: #ffffff !important;
 }
 
-/* ── Empty state ── */
 .empty {
     text-align: center;
     padding: 40px 20px;
@@ -166,7 +145,6 @@ div.stButton > button:hover {
     background: #fafafa;
 }
 
-/* ── Tabs ── */
 .stTabs [data-baseweb="tab-list"] {
     gap: 0px;
     background: #f0f0f0;
@@ -187,7 +165,6 @@ div.stButton > button:hover {
     font-weight: bold !important;
 }
 
-/* ── Section headers within Read tab ── */
 .section-header {
     font-size: 12px;
     font-weight: bold;
@@ -211,7 +188,6 @@ div.stButton > button:hover {
     border-color: #cccccc;
 }
 
-/* ── Filter pills ── */
 .read-filter-btn div.stButton > button {
     border-radius: 0px !important;
     padding: 6px 12px !important;
@@ -224,7 +200,6 @@ div.stButton > button:hover {
     background: #f0f0f0 !important;
 }
 
-/* ── Unread indicator dot ── */
 .unread-dot {
     display: inline-block;
     width: 8px;
@@ -236,14 +211,13 @@ div.stButton > button:hover {
 </style>
 """, unsafe_allow_html=True)
 
-# ── Auto-refresh ───────────────────────────────────────────────────────────────
+
 if HAS_AUTOREFRESH:
     st_autorefresh(interval=10_000, key="ar")
 else:
     st.markdown('<meta http-equiv="refresh" content="10">', unsafe_allow_html=True)
 
 
-# ── Disk helpers ───────────────────────────────────────────────────────────────
 def load_json(path, default):
     if not os.path.exists(path):
         return default
@@ -262,7 +236,6 @@ def save_json(path, data):
 
 
 def load_store():
-    """Returns {"HIGH":[...], "MEDIUM":[...], "LOW":[...]}"""
     s = load_json(IMPORTANT_EMAILS_FILE, {})
     for p in ("HIGH", "MEDIUM", "LOW"):
         s.setdefault(p, [])
@@ -270,7 +243,6 @@ def load_store():
 
 
 def load_read_ids():
-    """Returns {"HIGH":[id,...], "MEDIUM":[...], "LOW":[...]}"""
     d = load_json(DISMISSED_FILE, {})
     for p in ("HIGH", "MEDIUM", "LOW"):
         d.setdefault(p, [])
@@ -289,7 +261,6 @@ def mark_as_read(email_id, priority):
     save_read_ids(d)
 
 
-# ── Render one email card ──────────────────────────────────────────────────────
 def render_card(email, tab_key, is_read=False):
     email_id    = email.get("id", "unknown")
     priority    = (email.get("priority") or "LOW").upper()
@@ -334,7 +305,6 @@ def render_card(email, tab_key, is_read=False):
         """, unsafe_allow_html=True)
 
 
-# ── Load data from disk ────────────────────────────────────────────────────────
 store     = load_store()
 read_data = load_read_ids()
 
@@ -342,20 +312,19 @@ high_emails   = store["HIGH"]
 medium_emails = store["MEDIUM"]
 low_emails    = store["LOW"]
 
-# Active (unread) emails
+
 active_high   = [e for e in high_emails   if e.get("id") not in read_data["HIGH"]]
 active_medium = [e for e in medium_emails if e.get("id") not in read_data["MEDIUM"]]
 active_low    = [e for e in low_emails    if e.get("id") not in read_data["LOW"]]
 all_active    = active_high + active_medium + active_low
 
-# Read emails grouped by priority
+
 read_high   = [e for e in high_emails   if e.get("id") in read_data["HIGH"]]
 read_medium = [e for e in medium_emails if e.get("id") in read_data["MEDIUM"]]
 read_low    = [e for e in low_emails    if e.get("id") in read_data["LOW"]]
 total_read  = len(read_high) + len(read_medium) + len(read_low)
 
 
-# ── Header ─────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="dash-header">
     <h1>Email Classifier Dashboard</h1>
@@ -363,7 +332,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ── Stats row: Active (Unread) ─────────────────────────────────────────────────
+
 st.markdown(
     '<div style="font-size:11px;font-weight:bold;color:#000000;margin-bottom:5px;">Active (Unread)</div>',
     unsafe_allow_html=True,
@@ -381,7 +350,7 @@ for col, num, lbl, cls in [
         <div class="l">{lbl}</div>
     </div>""", unsafe_allow_html=True)
 
-# ── Stats row: Read with clickable filter pills ────────────────────────────────
+
 if "read_filter" not in st.session_state:
     st.session_state.read_filter = "ALL"
 
@@ -390,7 +359,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Filter buttons row
+
 st.markdown('<div class="read-filter-btn">', unsafe_allow_html=True)
 fc1, fc2, fc3, fc4 = st.columns(4)
 filters = [
@@ -409,13 +378,13 @@ st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# ── Tabs ───────────────────────────────────────────────────────────────────────
+
 tab_active, tab_read = st.tabs([
     f"Active ({len(all_active)})",
     f"Read ({total_read})",
 ])
 
-# ── Tab: Active (Unread) ───────────────────────────────────────────────────────
+
 with tab_active:
     if not all_active:
         st.markdown(
@@ -423,7 +392,7 @@ with tab_active:
             unsafe_allow_html=True,
         )
     else:
-        # Show HIGH first, then MEDIUM, then LOW — latest first within each
+
         for email in active_high:
             render_card(email, "active")
         for email in active_medium:
@@ -431,7 +400,7 @@ with tab_active:
         for email in active_low:
             render_card(email, "active")
 
-# ── Tab: Read / Dismissed ──────────────────────────────────────────────────────
+
 with tab_read:
     filter_ = st.session_state.read_filter
 
@@ -458,5 +427,3 @@ with tab_read:
                 st.markdown('<div class="section-header sl">Low Priority</div>', unsafe_allow_html=True)
                 for email in read_low:
                     render_card(email, f"read_{filter_}", is_read=True)
-
-

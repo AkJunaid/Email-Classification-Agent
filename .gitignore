@@ -1,2 +1,4 @@
 .env
-.env
+
+# Runtime state (created by Docker on first run)
+data/

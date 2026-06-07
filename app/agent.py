@@ -1,27 +1,3 @@
-"""
-agent.py — Email Classifier Agent
-==================================
-Architecture:
-  Thread 1 — EmailSimulator
-    Drip-feeds mock emails from /app/dataset/data.json into
-    /app/data/inbox.json one at a time, every 5-15 seconds.
-    Picks up newly added emails automatically.
-
-  Thread 2 — AgentPoller  (event-driven + safety poll)
-    Wakes up IMMEDIATELY whenever the inbox file changes
-    (using file mtime watching), classifies every unseen email
-    through the 3-node LangGraph pipeline, then goes back to sleep.
-    Also wakes every 30 s as a safety net in case the mtime watch misses.
-
-    Pipeline:  START → fetch_email → classify_email → store_result → END
-
-Persistence:
-  /app/data/inbox.json          — live inbox queue
-  /app/data/processed_ids.json  — IDs already classified (never re-process)
-  /app/data/important_emails.json — HIGH/MEDIUM/LOW sections written here
-  /app/data/dismissed.json      — dismissed email IDs, persisted to disk
-"""
-
 import os
 import json
 import time
@@ -33,28 +9,27 @@ from typing import TypedDict, Dict, Any, Optional
 from langchain_groq import ChatGroq
 from langgraph.graph import StateGraph, START, END
 
-# ── Bootstrap 
+
 os.makedirs("/app/data", exist_ok=True)
 os.makedirs("/app/dataset", exist_ok=True)
 
 load_dotenv()
 
-# ── Paths 
+
 DATASET_FILE          = "/app/dataset/data.json"
 INBOX_FILE            = "/app/data/inbox.json"
 PROCESSED_IDS_FILE    = "/app/data/processed_ids.json"
 IMPORTANT_EMAILS_FILE = "/app/data/important_emails.json"
 DISMISSED_FILE        = "/app/data/dismissed.json"
 
-SIM_MIN_DELAY  = 5    # seconds between simulated email arrivals
+SIM_MIN_DELAY  = 5
 SIM_MAX_DELAY  = 15
-SAFETY_POLL    = 30   # seconds — agent re-checks inbox even with no file change
+SAFETY_POLL    = 30
 
-# ── Event: fires when inbox file changes 
+
 inbox_changed = threading.Event()
 
 
-# ── JSON helpers ───────────────────────────────────────────────────────────────
 def load_json(path: str, default):
     if not os.path.exists(path):
         return default
@@ -66,7 +41,6 @@ def load_json(path: str, default):
 
 
 def save_json(path: str, data) -> None:
-    """Atomic write so dashboard never reads a half-written file."""
     tmp = path + ".tmp"
     with open(tmp, "w") as f:
         json.dump(data, f, indent=4)
@@ -74,9 +48,6 @@ def save_json(path: str, data) -> None:
 
 
 
-# EMAIL SIMULATOR THREAD
-# Delivers one email every 5-15 s from dataset into inbox.
-# Loops back to start if all emails are delivered; picks up new ones instantly.
 
 class EmailSimulator(threading.Thread):
     def __init__(self):
@@ -107,7 +78,7 @@ class EmailSimulator(threading.Thread):
             inbox.append(email)
             save_json(INBOX_FILE, inbox)
 
-            # Signal the agent thread immediately
+
             inbox_changed.set()
 
             print(f"[simulator] ✉  delivered id={email.get('id')}  "
@@ -119,9 +90,6 @@ class EmailSimulator(threading.Thread):
 
 
 
-# LANGGRAPH PIPELINE  —  3 nodes
-#   START → fetch_email → classify_email → store_result → END
-
 
 class AgentState(TypedDict):
     email:          Dict[str, Any]
@@ -129,7 +97,6 @@ class AgentState(TypedDict):
     error:          Optional[str]
 
 
-# Node 1 — validate fields
 def fetch_email_node(state: AgentState) -> AgentState:
     email = state["email"]
     print(f"  [fetch]    id={email.get('id')}  subject='{email.get('subject','')[:50]}'")
@@ -140,7 +107,6 @@ def fetch_email_node(state: AgentState) -> AgentState:
     return {**state, "error": None}
 
 
-# Node 2 — classify with Groq LLM
 def classify_email_node(state: AgentState) -> AgentState:
     if state.get("error"):
         return state
@@ -201,7 +167,6 @@ Reply with ONLY a raw JSON object, no markdown:
         return {**state, "classification": None, "error": str(e)}
 
 
-# Node 3 — persist result into priority-sectioned JSON
 def store_result_node(state: AgentState) -> AgentState:
     email          = state["email"]
     classification = state.get("classification")
@@ -209,7 +174,7 @@ def store_result_node(state: AgentState) -> AgentState:
 
     processed_ids = load_json(PROCESSED_IDS_FILE, [])
 
-    # Always mark as processed (even on error) to avoid infinite retry
+
     if email.get("id") not in processed_ids:
         processed_ids.append(email.get("id"))
         save_json(PROCESSED_IDS_FILE, processed_ids)
@@ -222,8 +187,8 @@ def store_result_node(state: AgentState) -> AgentState:
         print(f"  [store]    id={email.get('id')} → not important, ignored")
         return state
 
-    # Build the stored record — every field the dashboard needs
-    priority = classification["priority"]   # HIGH | MEDIUM | LOW
+
+    priority = classification["priority"]
     record = {
         "id":            email.get("id"),
         "subject":       email.get("subject", ""),
@@ -236,15 +201,14 @@ def store_result_node(state: AgentState) -> AgentState:
         "reason":        classification.get("reason", ""),
     }
 
-    # Load the priority-sectioned store
-    # Structure: { "HIGH": [...], "MEDIUM": [...], "LOW": [...] }
+
     store = load_json(IMPORTANT_EMAILS_FILE, {"HIGH": [], "MEDIUM": [], "LOW": []})
 
-    # Ensure all three keys exist (in case file was manually edited)
+
     for p in ("HIGH", "MEDIUM", "LOW"):
         store.setdefault(p, [])
 
-    # Insert newest-first within the right priority bucket
+
     store[priority].insert(0, record)
     save_json(IMPORTANT_EMAILS_FILE, store)
 
@@ -252,7 +216,6 @@ def store_result_node(state: AgentState) -> AgentState:
     return state
 
 
-# ── Compile LangGraph graph ────────────────────────────────────────────────────
 workflow = StateGraph(AgentState)
 workflow.add_node("fetch_email",    fetch_email_node)
 workflow.add_node("classify_email", classify_email_node)
@@ -265,9 +228,6 @@ agent_app = workflow.compile()
 
 
 
-# AGENT POLLER THREAD
-# Event-driven: wakes immediately when inbox_changed is set by the simulator.
-# Also wakes every SAFETY_POLL seconds as a fallback.
 
 def poll_once():
     inbox         = load_json(INBOX_FILE, [])
@@ -285,7 +245,7 @@ def poll_once():
 def run_agent_poller():
     print(f"[agent] started — event-driven + {SAFETY_POLL}s safety poll")
     while True:
-        # Wait for either a simulator signal OR the safety timeout
+
         triggered = inbox_changed.wait(timeout=SAFETY_POLL)
         inbox_changed.clear()
         if triggered:
@@ -293,8 +253,6 @@ def run_agent_poller():
         poll_once()
 
 
-
-# MAIN
 
 def main():
     print("=" * 58)
@@ -305,12 +263,12 @@ def main():
     print(f"  Poll    : event-driven (+ {SAFETY_POLL}s safety net)")
     print("=" * 58)
 
-    # Ensure the important_emails store has the right shape on first run
+
     if not os.path.exists(IMPORTANT_EMAILS_FILE):
         save_json(IMPORTANT_EMAILS_FILE, {"HIGH": [], "MEDIUM": [], "LOW": []})
 
     EmailSimulator().start()
-    run_agent_poller()   # blocks main thread
+    run_agent_poller()
 
 
 if __name__ == "__main__":

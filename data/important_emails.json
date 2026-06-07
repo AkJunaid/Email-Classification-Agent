@@ -1,6 +1,50 @@
 {
     "HIGH": [
         {
+            "id": 186,
+            "subject": "Cost anomaly alert",
+            "sender": "noreply@infrawatch.cloud",
+            "body": "An unusual spike in infrastructure costs has been detected on your account this billing cycle. Current projected spend is significantly higher than your historical average. We recommend reviewing your active resources and identifying any unintended instances or over-provisioned configurations.",
+            "time_received": "2026-06-07 11:16:39",
+            "important": true,
+            "priority": "HIGH",
+            "category": "HIGH_INVOICE",
+            "reason": "The email contains an alert about an unusual spike in infrastructure costs, which is a critical billing issue."
+        },
+        {
+            "id": 130,
+            "subject": "Ignored alert reactivated",
+            "sender": "updates@patchbot.dev",
+            "body": "A dependency alert that was previously marked as ignored has been reactivated due to an updated security advisory. The newly reported vulnerability is rated as high severity and requires your attention. Please review the updated advisory and take appropriate action to secure your project.",
+            "time_received": "2026-06-07 11:07:01",
+            "important": true,
+            "priority": "HIGH",
+            "category": "SECURITY_ALERT",
+            "reason": "The email contains a high-severity security alert that requires immediate attention to secure the project."
+        },
+        {
+            "id": 121,
+            "subject": "Dependency vulnerability found",
+            "sender": "updates@patchbot.dev",
+            "body": "A security vulnerability has been identified in one of your project's dependencies. The affected package has a known exploit that could potentially compromise your application. We recommend updating to the patched version immediately. Check the security advisory for remediation steps.",
+            "time_received": "2026-06-07 11:05:17",
+            "important": true,
+            "priority": "HIGH",
+            "category": "SECURITY_ALERT",
+            "reason": "A security vulnerability has been identified in one of the project's dependencies, requiring immediate attention to prevent potential compromise."
+        },
+        {
+            "id": 112,
+            "subject": "Anomaly detected in conversion rate",
+            "sender": "noreply@analyticscore.io",
+            "body": "An anomaly has been detected in your site's conversion rate over the past 48 hours. The rate has dropped significantly compared to the historical average. This could be due to technical issues, campaign changes, or shifting user behavior. We recommend investigating immediately.",
+            "time_received": "2026-06-07 11:03:55",
+            "important": true,
+            "priority": "HIGH",
+            "category": "SYSTEM_ANOMALY",
+            "reason": "Anomaly detected in conversion rate, which could indicate a technical issue or other critical system warning."
+        },
+        {
             "id": 60,
             "subject": "Memory leak suspected",
             "sender": "alerts@watchtower.ai",
@@ -134,6 +178,248 @@
         }
     ],
     "MEDIUM": [
+        {
+            "id": 199,
+            "subject": "Response data anomaly detected",
+            "sender": "ping@feedbackloop.app",
+            "body": "Our system detected an anomaly in your survey response data. A high volume of responses from similar IP addresses within a short time window has been flagged as potentially suspicious. We recommend reviewing these responses and filtering them before analyzing the data set.",
+            "time_received": "2026-06-07 11:18:41",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "SYSTEM_ANOMALY",
+            "reason": "The email indicates a potential system anomaly that requires review and filtering of survey response data."
+        },
+        {
+            "id": 195,
+            "subject": "Negative sentiment spike",
+            "sender": "ping@feedbackloop.app",
+            "body": "Our sentiment analysis has flagged a spike in negative responses in your most recent survey batch. A cluster of responses contains recurring negative themes that may warrant closer attention. We recommend reviewing the flagged responses in detail to identify actionable feedback areas.",
+            "time_received": "2026-06-07 11:18:05",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "CLIENT_COMPLAINT",
+            "reason": "The email indicates a negative sentiment spike in a survey batch, suggesting potential client complaints or actionable feedback areas."
+        },
+        {
+            "id": 192,
+            "subject": "Survey response threshold reached",
+            "sender": "ping@feedbackloop.app",
+            "body": "Your survey has received 100 responses, which was the threshold you set for generating an insights report. A preliminary analysis has been compiled and is now available in your dashboard. The report highlights key themes and sentiment trends from the responses collected so far.",
+            "time_received": "2026-06-07 11:17:31",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email is related to a survey response threshold being reached, which may require attention from the user, but is not urgent or critical."
+        },
+        {
+            "id": 184,
+            "subject": "Backup failed",
+            "sender": "noreply@infrawatch.cloud",
+            "body": "The scheduled backup for your environment failed to complete successfully. This may be due to a storage connectivity issue or insufficient quota. Our operations team has been notified and is investigating the cause. Please review the error details in your backup history log.",
+            "time_received": "2026-06-07 11:16:21",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "SERVER_ANOMALY",
+            "reason": "The email indicates a failed backup, which may require attention from the recipient to resolve the issue."
+        },
+        {
+            "id": 182,
+            "subject": "Auto-scaling triggered",
+            "sender": "noreply@infrawatch.cloud",
+            "body": "Auto-scaling has been triggered in response to increased load on your application cluster. Additional instances have been spun up to handle the traffic. Monitor your dashboard to confirm that performance has stabilized and that the new instances are functioning correctly.",
+            "time_received": "2026-06-07 11:16:01",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "SERVER_ANOMALY",
+            "reason": "Auto-scaling has been triggered in response to increased load on the application cluster, indicating a potential system anomaly."
+        },
+        {
+            "id": 163,
+            "subject": "Beta bug report received",
+            "sender": "hello@productlaunch.io",
+            "body": "We have received your bug report and our engineering team is investigating the issue you described. Thank you for taking the time to document and submit it. Bug reports from beta users like you are essential to improving the product before the official release launch.",
+            "time_received": "2026-06-07 11:12:35",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "CLIENT_COMPLAINT",
+            "reason": "The email is a response to a bug report submitted by the user, indicating a client complaint that requires attention from the engineering team."
+        },
+        {
+            "id": 160,
+            "subject": "Incident report submitted",
+            "sender": "fleet@logisticshub.net",
+            "body": "A driver has submitted an incident report for a minor road event that occurred during today's shift. The report is now available in your incident log for review. Please follow up with the driver and document any follow-up actions taken in the fleet management system.",
+            "time_received": "2026-06-07 11:12:15",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "CLIENT_COMPLAINT",
+            "reason": "The email requires the recipient to follow up with a driver and document actions in the fleet management system, indicating a potential issue that needs attention."
+        },
+        {
+            "id": 159,
+            "subject": "GPS tracker offline",
+            "sender": "fleet@logisticshub.net",
+            "body": "The GPS tracker on Vehicle 04 has gone offline and is no longer transmitting location data. This may be due to a hardware issue, signal loss, or tampering. Until the tracker is restored, manual check-ins will be required for that vehicle to maintain operational visibility.",
+            "time_received": "2026-06-07 11:12:05",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "CLIENT_COMPLAINT",
+            "reason": "The email reports a critical issue with a GPS tracker that requires manual check-ins, indicating a potential operational problem."
+        },
+        {
+            "id": 155,
+            "subject": "Driver check-in overdue",
+            "sender": "fleet@logisticshub.net",
+            "body": "Driver check-in for Route 23C is overdue by 20 minutes. This could indicate a communication issue, traffic delay, or an unexpected situation on the road. Please attempt to contact the driver directly and follow protocol if contact cannot be established promptly.",
+            "time_received": "2026-06-07 11:11:27",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "CLIENT_COMPLAINT",
+            "reason": "The email indicates a potential issue with a driver check-in, which may require prompt attention from the recipient."
+        },
+        {
+            "id": 154,
+            "subject": "Route optimization complete",
+            "sender": "fleet@logisticshub.net",
+            "body": "Route optimization for tomorrow's delivery schedule has been completed. The updated routes have been pushed to all driver devices and are now reflected in the dispatch system. The optimized routes are expected to reduce total travel time and fuel consumption significantly.",
+            "time_received": "2026-06-07 11:11:13",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email is related to a routine update of delivery routes, but it has a potential impact on operations and may require attention from logistics staff."
+        },
+        {
+            "id": 153,
+            "subject": "Maintenance alert: Vehicle 09",
+            "sender": "fleet@logisticshub.net",
+            "body": "Vehicle 09 is due for scheduled maintenance based on current mileage. Please arrange for the vehicle to be taken off route and scheduled for servicing at the earliest available slot. Operating vehicles beyond maintenance intervals may affect reliability and safety.",
+            "time_received": "2026-06-07 11:11:03",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email requires attention to schedule maintenance for a vehicle, but it is not urgent or critical."
+        },
+        {
+            "id": 151,
+            "subject": "Vehicle departure confirmed",
+            "sender": "fleet@logisticshub.net",
+            "body": "Vehicle departure for route 47B has been confirmed and the driver has checked in successfully. The estimated arrival time at the first delivery stop is calculated based on current traffic conditions. You can track the vehicle's real-time location in the fleet management dashboard.",
+            "time_received": "2026-06-07 11:10:45",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email is related to a vehicle departure confirmation, which is a routine update but may require attention for tracking purposes."
+        },
+        {
+            "id": 126,
+            "subject": "License compliance issue detected",
+            "sender": "updates@patchbot.dev",
+            "body": "One of your project dependencies has a license that may conflict with your project's stated license policy. We recommend reviewing the dependency's license terms and consulting your legal team if necessary before distribution. A list of affected packages is included in the report.",
+            "time_received": "2026-06-07 11:06:18",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email indicates a potential issue with license compliance, requiring attention from the legal team, but it is not an urgent or critical matter."
+        },
+        {
+            "id": 125,
+            "subject": "Pull request opened by PatchBot",
+            "sender": "updates@patchbot.dev",
+            "body": "PatchBot has automatically opened a pull request to update an outdated dependency in your repository. The PR includes the version bump and an automated changelog summary. Please review the changes and run your test suite before merging to confirm compatibility.",
+            "time_received": "2026-06-07 11:06:04",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "Automated notification from a repository management system requiring review and action to update a dependency"
+        },
+        {
+            "id": 124,
+            "subject": "Deprecated package in use",
+            "sender": "updates@patchbot.dev",
+            "body": "One or more packages in your project have been officially deprecated by their maintainers. Deprecated packages no longer receive security patches or updates and should be replaced with actively maintained alternatives. We recommend migrating away from these packages as soon as possible.",
+            "time_received": "2026-06-07 11:05:59",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email is about a deprecated package in use, which requires attention but is not an urgent issue."
+        },
+        {
+            "id": 123,
+            "subject": "Breaking change in upcoming release",
+            "sender": "updates@patchbot.dev",
+            "body": "A dependency you rely on has announced a breaking change in their upcoming major version release. We wanted to alert you in advance so you can review the migration guide and plan accordingly before upgrading. Taking action early will help avoid disruption to your project.",
+            "time_received": "2026-06-07 11:05:44",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email is about a potential breaking change in a dependency, which may require action to avoid disruption to the project."
+        },
+        {
+            "id": 115,
+            "subject": "Tracking code missing on key page",
+            "sender": "noreply@analyticscore.io",
+            "body": "Our system has detected that the analytics tracking code is not firing on one of your important pages. This means data from that page is not being captured in your reports. Please check the page implementation and reinstall the tracking snippet to restore data collection.",
+            "time_received": "2026-06-07 11:04:31",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email is related to a technical issue with analytics tracking code, but it's not a high-priority alert or a security concern."
+        },
+        {
+            "id": 110,
+            "subject": "Single sign-on configured",
+            "sender": "admin@workspacehq.com",
+            "body": "Single sign-on has been successfully configured for your workspace. Team members can now log in using their organizational credentials without requiring a separate password. Please ensure all users are informed of this change and update any saved login methods accordingly.",
+            "time_received": "2026-06-07 11:03:35",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email is about a configuration change that requires user action, but it's not an urgent or critical issue."
+        },
+        {
+            "id": 109,
+            "subject": "New workspace policy applied",
+            "sender": "admin@workspacehq.com",
+            "body": "A new data retention and privacy policy has been applied to your workspace by your organization's administrator. This policy governs how data is stored, accessed, and deleted within the workspace. Please review the policy documentation available in your admin settings panel.",
+            "time_received": "2026-06-07 11:03:27",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email is related to a new policy update that requires user attention, but it's not an urgent or critical issue."
+        },
+        {
+            "id": 106,
+            "subject": "Audit log export ready",
+            "sender": "admin@workspacehq.com",
+            "body": "The audit log export you requested is now ready for download. The file contains a complete record of user actions, permission changes, and system events within your workspace for the specified date range. Please download and store the file securely for your records.",
+            "time_received": "2026-06-07 11:02:52",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email is related to a specific request from the user, but it's not urgent or critical."
+        },
+        {
+            "id": 102,
+            "subject": "New admin permission granted",
+            "sender": "admin@workspacehq.com",
+            "body": "Admin-level permissions have been granted to a user in your organization workspace. This was done by an existing admin. If this change was not authorized, please review your user management settings and revoke the permission immediately through the administrative dashboard.",
+            "time_received": "2026-06-07 11:02:08",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email is related to a change in user permissions, but it does not indicate an urgent or critical issue, making it medium priority."
+        },
+        {
+            "id": 101,
+            "subject": "Workspace storage limit approaching",
+            "sender": "admin@workspacehq.com",
+            "body": "Your team's shared workspace storage is approaching the configured usage limit. Continued uploads and file creation may be restricted once the limit is reached. We recommend reviewing stored files and archiving or deleting items that are no longer actively needed by the team.",
+            "time_received": "2026-06-07 11:01:55",
+            "important": true,
+            "priority": "MEDIUM",
+            "category": "OTHER",
+            "reason": "The email is a notification about approaching storage limit, requiring action from the team to prevent restrictions."
+        },
         {
             "id": 76,
             "subject": "Order on hold",

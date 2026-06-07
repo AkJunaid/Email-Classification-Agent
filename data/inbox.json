@@ -586,5 +586,617 @@
         "sender": "learn@eduvault.io",
         "subject": "Learning path recommended",
         "body": "Based on your completed courses and stated learning goals, we have generated a personalized learning path recommendation. Following this path will help you systematically build the skills most relevant to your career objectives. View your recommended path in the dashboard."
+    },
+    {
+        "id": 99,
+        "sender": "learn@eduvault.io",
+        "subject": "Discussion board reply",
+        "body": "Someone has replied to a discussion thread you participated in. Engaging in course discussions enhances understanding and builds community with fellow learners. Log in to view the reply and continue the conversation or mark the thread as resolved if your question has been answered."
+    },
+    {
+        "id": 100,
+        "sender": "learn@eduvault.io",
+        "subject": "Subscription expiring in 7 days",
+        "body": "Your current learning subscription is set to expire in 7 days. To maintain uninterrupted access to all course materials and features, please renew your subscription before the expiry date. Renewal options and pricing are available in your account settings and billing section."
+    },
+    {
+        "id": 101,
+        "sender": "admin@workspacehq.com",
+        "subject": "Workspace storage limit approaching",
+        "body": "Your team's shared workspace storage is approaching the configured usage limit. Continued uploads and file creation may be restricted once the limit is reached. We recommend reviewing stored files and archiving or deleting items that are no longer actively needed by the team."
+    },
+    {
+        "id": 102,
+        "sender": "admin@workspacehq.com",
+        "subject": "New admin permission granted",
+        "body": "Admin-level permissions have been granted to a user in your organization workspace. This was done by an existing admin. If this change was not authorized, please review your user management settings and revoke the permission immediately through the administrative dashboard."
+    },
+    {
+        "id": 103,
+        "sender": "admin@workspacehq.com",
+        "subject": "Team member removed",
+        "body": "A team member has been removed from your workspace. Their access to all shared resources, projects, and communication channels has been revoked. Any files they owned have been transferred to the workspace admin. Please review and redistribute pending work items if necessary."
+    },
+    {
+        "id": 104,
+        "sender": "admin@workspacehq.com",
+        "subject": "Integration added to workspace",
+        "body": "A new third-party integration has been added to your team workspace. This integration connects your workspace with an external service and may have access to certain workspace data. Please review the integration permissions and ensure it aligns with your organizational security policies."
+    },
+    {
+        "id": 105,
+        "sender": "admin@workspacehq.com",
+        "subject": "Workspace settings changed",
+        "body": "Changes have been made to your workspace settings by an administrator. These changes may affect how team members interact with shared resources, notifications, and access controls. If you were not aware of these changes, please contact your workspace administrator for clarification."
+    },
+    {
+        "id": 106,
+        "sender": "admin@workspacehq.com",
+        "subject": "Audit log export ready",
+        "body": "The audit log export you requested is now ready for download. The file contains a complete record of user actions, permission changes, and system events within your workspace for the specified date range. Please download and store the file securely for your records."
+    },
+    {
+        "id": 107,
+        "sender": "admin@workspacehq.com",
+        "subject": "Monthly usage report",
+        "body": "Your monthly workspace usage report is now available. It provides an overview of team activity, storage consumption, integration usage, and user engagement metrics for the past month. Review the report to identify trends and optimize workspace resource allocation."
+    },
+    {
+        "id": 108,
+        "sender": "admin@workspacehq.com",
+        "subject": "Downgrade request received",
+        "body": "We have received a request to downgrade your current workspace plan. The downgrade will take effect at the end of your current billing cycle. Some features may no longer be accessible after the change. Please review the plan comparison to understand what will be affected."
+    },
+    {
+        "id": 109,
+        "sender": "admin@workspacehq.com",
+        "subject": "New workspace policy applied",
+        "body": "A new data retention and privacy policy has been applied to your workspace by your organization's administrator. This policy governs how data is stored, accessed, and deleted within the workspace. Please review the policy documentation available in your admin settings panel."
+    },
+    {
+        "id": 110,
+        "sender": "admin@workspacehq.com",
+        "subject": "Single sign-on configured",
+        "body": "Single sign-on has been successfully configured for your workspace. Team members can now log in using their organizational credentials without requiring a separate password. Please ensure all users are informed of this change and update any saved login methods accordingly."
+    },
+    {
+        "id": 111,
+        "sender": "noreply@analyticscore.io",
+        "subject": "Weekly analytics summary",
+        "body": "Your weekly analytics summary for the tracked properties is now available. Key highlights include changes in session volume, user engagement trends, and top-performing content pages. Review the full report in your dashboard to gain deeper insights and identify areas for improvement."
+    },
+    {
+        "id": 112,
+        "sender": "noreply@analyticscore.io",
+        "subject": "Anomaly detected in conversion rate",
+        "body": "An anomaly has been detected in your site's conversion rate over the past 48 hours. The rate has dropped significantly compared to the historical average. This could be due to technical issues, campaign changes, or shifting user behavior. We recommend investigating immediately."
+    },
+    {
+        "id": 113,
+        "sender": "noreply@analyticscore.io",
+        "subject": "Goal completion milestone reached",
+        "body": "Congratulations! One of your tracked goals has reached a significant milestone. The completion count for this goal has exceeded the target you set at the beginning of the tracking period. Review the goal report to understand what contributed to this success."
+    },
+    {
+        "id": 114,
+        "sender": "noreply@analyticscore.io",
+        "subject": "New dashboard shared with you",
+        "body": "A colleague has shared an analytics dashboard with your account. You now have view access to the report which includes visualizations for key performance indicators relevant to your team. Log in to your account and navigate to shared dashboards to explore the report."
+    },
+    {
+        "id": 115,
+        "sender": "noreply@analyticscore.io",
+        "subject": "Tracking code missing on key page",
+        "body": "Our system has detected that the analytics tracking code is not firing on one of your important pages. This means data from that page is not being captured in your reports. Please check the page implementation and reinstall the tracking snippet to restore data collection."
+    },
+    {
+        "id": 116,
+        "sender": "noreply@analyticscore.io",
+        "subject": "Custom report export complete",
+        "body": "The custom report you requested has been generated and is ready for download. The export includes data filtered to your specified parameters and is available in the format you selected. Please download the file from your reports section before the expiry window closes."
+    },
+    {
+        "id": 117,
+        "sender": "noreply@analyticscore.io",
+        "subject": "Real-time visitor spike",
+        "body": "A real-time spike in visitor activity has been detected on your tracked properties. Traffic is currently running significantly above the daily average. This may be the result of a viral content piece, referral campaign, or external coverage. Review live data for more detail."
+    },
+    {
+        "id": 118,
+        "sender": "noreply@analyticscore.io",
+        "subject": "Segment comparison report ready",
+        "body": "Your requested segment comparison report has been compiled and is now available in your dashboard. The report breaks down user behavior and conversion metrics across the audience segments you defined. Use these insights to refine targeting and personalization strategies."
+    },
+    {
+        "id": 119,
+        "sender": "noreply@analyticscore.io",
+        "subject": "Data retention policy change",
+        "body": "We are updating our data retention policy effective next month. Aggregated analytics data will now be retained for up to 24 months, while raw event data will be retained for 6 months before deletion. Please review the updated policy in our documentation for full details."
+    },
+    {
+        "id": 120,
+        "sender": "noreply@analyticscore.io",
+        "subject": "Year in review report",
+        "body": "Your annual analytics year-in-review report has been compiled and is ready to explore. The report highlights growth trends, peak traffic periods, most popular content, and user acquisition patterns across the full year. It is a great summary of your digital performance."
+    },
+    {
+        "id": 121,
+        "sender": "updates@patchbot.dev",
+        "subject": "Dependency vulnerability found",
+        "body": "A security vulnerability has been identified in one of your project's dependencies. The affected package has a known exploit that could potentially compromise your application. We recommend updating to the patched version immediately. Check the security advisory for remediation steps."
+    },
+    {
+        "id": 122,
+        "sender": "updates@patchbot.dev",
+        "subject": "All dependencies up to date",
+        "body": "A scan of your project's dependency tree has confirmed that all packages are up to date with the latest stable releases. No known vulnerabilities were detected at this time. We will continue to monitor for new advisories and notify you promptly if anything changes."
+    },
+    {
+        "id": 123,
+        "sender": "updates@patchbot.dev",
+        "subject": "Breaking change in upcoming release",
+        "body": "A dependency you rely on has announced a breaking change in their upcoming major version release. We wanted to alert you in advance so you can review the migration guide and plan accordingly before upgrading. Taking action early will help avoid disruption to your project."
+    },
+    {
+        "id": 124,
+        "sender": "updates@patchbot.dev",
+        "subject": "Deprecated package in use",
+        "body": "One or more packages in your project have been officially deprecated by their maintainers. Deprecated packages no longer receive security patches or updates and should be replaced with actively maintained alternatives. We recommend migrating away from these packages as soon as possible."
+    },
+    {
+        "id": 125,
+        "sender": "updates@patchbot.dev",
+        "subject": "Pull request opened by PatchBot",
+        "body": "PatchBot has automatically opened a pull request to update an outdated dependency in your repository. The PR includes the version bump and an automated changelog summary. Please review the changes and run your test suite before merging to confirm compatibility."
+    },
+    {
+        "id": 126,
+        "sender": "updates@patchbot.dev",
+        "subject": "License compliance issue detected",
+        "body": "One of your project dependencies has a license that may conflict with your project's stated license policy. We recommend reviewing the dependency's license terms and consulting your legal team if necessary before distribution. A list of affected packages is included in the report."
+    },
+    {
+        "id": 127,
+        "sender": "updates@patchbot.dev",
+        "subject": "New major version available",
+        "body": "A major version update is available for a core dependency in your project. Major updates often include significant new features and breaking changes. We recommend reviewing the changelog and migration guide before upgrading to ensure a smooth transition for your application."
+    },
+    {
+        "id": 128,
+        "sender": "updates@patchbot.dev",
+        "subject": "Monthly dependency health report",
+        "body": "Your monthly dependency health report is now ready. It provides an overview of your project's dependency freshness, vulnerability exposure, and license compliance status. Use this report to prioritize updates and maintain a healthy, secure codebase going into the next development cycle."
+    },
+    {
+        "id": 129,
+        "sender": "updates@patchbot.dev",
+        "subject": "Repository scan complete",
+        "body": "A full scan of your connected repository has been completed. The scan reviewed all tracked files for outdated dependencies, security advisories, and license issues. A detailed breakdown of findings is available in your PatchBot dashboard for your review and action."
+    },
+    {
+        "id": 130,
+        "sender": "updates@patchbot.dev",
+        "subject": "Ignored alert reactivated",
+        "body": "A dependency alert that was previously marked as ignored has been reactivated due to an updated security advisory. The newly reported vulnerability is rated as high severity and requires your attention. Please review the updated advisory and take appropriate action to secure your project."
+    },
+    {
+        "id": 131,
+        "sender": "notify@calendarmate.app",
+        "subject": "Meeting reminder: Product review",
+        "body": "This is a reminder that your Product Review meeting is scheduled to start in 15 minutes. Please make sure you are prepared with your agenda items and any materials you plan to present. The meeting link is included in your original calendar invitation for easy access."
+    },
+    {
+        "id": 132,
+        "sender": "notify@calendarmate.app",
+        "subject": "Calendar invite accepted",
+        "body": "A participant has accepted the calendar invitation you sent for the upcoming meeting. The confirmed attendee list is now updated in your calendar event. You can view the full list of responses from other invitees in the event details within your calendar application."
+    },
+    {
+        "id": 133,
+        "sender": "notify@calendarmate.app",
+        "subject": "Meeting cancelled by organizer",
+        "body": "The meeting you were invited to has been cancelled by the organizer. The event has been removed from your calendar automatically. If you have questions regarding the cancellation or would like to reschedule, please reach out to the meeting organizer directly."
+    },
+    {
+        "id": 134,
+        "sender": "notify@calendarmate.app",
+        "subject": "Recurring event updated",
+        "body": "One of your recurring calendar events has been updated. The organizer has made changes to the event details including the time, location, or agenda. Please review the updated event in your calendar to ensure you have the most accurate information for future occurrences."
+    },
+    {
+        "id": 135,
+        "sender": "notify@calendarmate.app",
+        "subject": "Scheduling conflict detected",
+        "body": "We have detected a scheduling conflict on your calendar. Two events are currently overlapping on the same time slot. Please review your calendar and resolve the conflict by declining one of the invitations or requesting a reschedule from the relevant organizers."
+    },
+    {
+        "id": 136,
+        "sender": "notify@calendarmate.app",
+        "subject": "New meeting request from external contact",
+        "body": "You have received a new meeting request from an external contact who is not currently in your network. The request includes a proposed time and a brief description of the meeting purpose. Review the invitation in your calendar app and accept or decline at your convenience."
+    },
+    {
+        "id": 137,
+        "sender": "notify@calendarmate.app",
+        "subject": "Daily agenda for tomorrow",
+        "body": "Here is a preview of your scheduled agenda for tomorrow. You have a total of four events including a morning standup, two back-to-back client calls, and an internal team sync in the afternoon. Make sure to review any preparation materials linked to each event in advance."
+    },
+    {
+        "id": 138,
+        "sender": "notify@calendarmate.app",
+        "subject": "Room booking confirmed",
+        "body": "Your meeting room booking has been confirmed for the requested time slot. The room details including location and capacity are included in the event on your calendar. Please ensure the room is vacated promptly at the end of your booking to respect other scheduled bookings."
+    },
+    {
+        "id": 139,
+        "sender": "notify@calendarmate.app",
+        "subject": "Holiday calendar synced",
+        "body": "The public holiday calendar for your region has been synced to your account. Upcoming public holidays will now appear in your calendar view alongside your personal and work events. This will help you plan ahead and account for non-working days when scheduling meetings."
+    },
+    {
+        "id": 140,
+        "sender": "notify@calendarmate.app",
+        "subject": "Event added by assistant",
+        "body": "A new calendar event has been added on your behalf by your connected assistant integration. The event details have been extracted from a recent email thread and added to your calendar at the time and date confirmed during the conversation. Review the event to confirm accuracy."
+    },
+    {
+        "id": 141,
+        "sender": "mailer@brandpulse.co",
+        "subject": "Campaign launch confirmed",
+        "body": "Your email campaign has been successfully scheduled and is confirmed for launch. The campaign will be sent to your selected audience segment at the time you specified. You can monitor delivery progress and early performance metrics in your campaign dashboard."
+    },
+    {
+        "id": 142,
+        "sender": "mailer@brandpulse.co",
+        "subject": "A/B test results available",
+        "body": "The A/B test for your recent campaign has concluded and the results are now available. Variant B outperformed variant A in open rate by 12 percent and click-through rate by 8 percent. The winning variant has been automatically selected for the remaining audience sends."
+    },
+    {
+        "id": 143,
+        "sender": "mailer@brandpulse.co",
+        "subject": "List import complete",
+        "body": "Your subscriber list import has been completed successfully. All valid contacts have been added to your selected audience list. A small number of records were skipped due to formatting issues or duplicate entries. Review the import summary in your contacts dashboard."
+    },
+    {
+        "id": 144,
+        "sender": "mailer@brandpulse.co",
+        "subject": "Unsubscribe spike detected",
+        "body": "An unusual spike in unsubscribe requests has been detected following your most recent campaign send. This may indicate that the content or frequency of communication did not align with subscriber expectations. We recommend reviewing your campaign content and audience targeting strategy."
+    },
+    {
+        "id": 145,
+        "sender": "mailer@brandpulse.co",
+        "subject": "Campaign performance report",
+        "body": "Your campaign performance report for last week's send is now available. The report includes open rates, click-through rates, bounce rates, and conversion data. Overall performance was above industry benchmarks for your category. Full details are available in your reporting dashboard."
+    },
+    {
+        "id": 146,
+        "sender": "mailer@brandpulse.co",
+        "subject": "Sending reputation alert",
+        "body": "Your sender reputation score has declined slightly this month. This can affect email deliverability and inbox placement rates going forward. We recommend reviewing your list hygiene practices and reducing sending frequency temporarily to allow your reputation to recover."
+    },
+    {
+        "id": 147,
+        "sender": "mailer@brandpulse.co",
+        "subject": "Automation workflow triggered",
+        "body": "An automation workflow in your account has been triggered for a new subscriber who matched the defined entry criteria. The workflow will execute a series of scheduled emails based on the sequence you configured. Monitor automation activity in your workflow dashboard."
+    },
+    {
+        "id": 148,
+        "sender": "mailer@brandpulse.co",
+        "subject": "Template saved successfully",
+        "body": "Your email template has been saved successfully to your template library. You can reuse this template for future campaigns by selecting it during the campaign creation process. Preview and edit options for the template are available in your template management section."
+    },
+    {
+        "id": 149,
+        "sender": "mailer@brandpulse.co",
+        "subject": "Domain authentication required",
+        "body": "To improve deliverability and inbox placement for your campaigns, we recommend completing domain authentication setup. This involves adding SPF, DKIM, and DMARC records to your domain DNS settings. Step-by-step instructions are available in our authentication setup guide."
+    },
+    {
+        "id": 150,
+        "sender": "mailer@brandpulse.co",
+        "subject": "Monthly send limit reached",
+        "body": "Your account has reached the monthly email send limit for your current plan. Sending has been paused until your plan resets at the start of next month. If you need to send additional campaigns before then, please consider upgrading your plan to a higher tier."
+    },
+    {
+        "id": 151,
+        "sender": "fleet@logisticshub.net",
+        "subject": "Vehicle departure confirmed",
+        "body": "Vehicle departure for route 47B has been confirmed and the driver has checked in successfully. The estimated arrival time at the first delivery stop is calculated based on current traffic conditions. You can track the vehicle's real-time location in the fleet management dashboard."
+    },
+    {
+        "id": 152,
+        "sender": "fleet@logisticshub.net",
+        "subject": "Delivery delay: weather conditions",
+        "body": "A delivery delay has been reported on route 12A due to adverse weather conditions in the region. The driver is proceeding cautiously and estimated arrival times have been adjusted accordingly. Affected recipients have been notified of the revised delivery window for their packages."
+    },
+    {
+        "id": 153,
+        "sender": "fleet@logisticshub.net",
+        "subject": "Maintenance alert: Vehicle 09",
+        "body": "Vehicle 09 is due for scheduled maintenance based on current mileage. Please arrange for the vehicle to be taken off route and scheduled for servicing at the earliest available slot. Operating vehicles beyond maintenance intervals may affect reliability and safety."
+    },
+    {
+        "id": 154,
+        "sender": "fleet@logisticshub.net",
+        "subject": "Route optimization complete",
+        "body": "Route optimization for tomorrow's delivery schedule has been completed. The updated routes have been pushed to all driver devices and are now reflected in the dispatch system. The optimized routes are expected to reduce total travel time and fuel consumption significantly."
+    },
+    {
+        "id": 155,
+        "sender": "fleet@logisticshub.net",
+        "subject": "Driver check-in overdue",
+        "body": "Driver check-in for Route 23C is overdue by 20 minutes. This could indicate a communication issue, traffic delay, or an unexpected situation on the road. Please attempt to contact the driver directly and follow protocol if contact cannot be established promptly."
+    },
+    {
+        "id": 156,
+        "sender": "fleet@logisticshub.net",
+        "subject": "All deliveries completed for today",
+        "body": "All scheduled deliveries for today have been completed successfully. No outstanding deliveries remain on today's route manifest. Driver end-of-day reports are being submitted and will be available in the operations dashboard once processing is complete."
+    },
+    {
+        "id": 157,
+        "sender": "fleet@logisticshub.net",
+        "subject": "Fuel usage report",
+        "body": "The weekly fuel usage report for your fleet is now available. The report provides a breakdown of fuel consumption by vehicle, route efficiency scores, and idle time data. Use this information to identify underperforming routes and drivers with opportunities for fuel savings."
+    },
+    {
+        "id": 158,
+        "sender": "fleet@logisticshub.net",
+        "subject": "New driver added to system",
+        "body": "A new driver has been successfully added to your fleet management system. Their profile includes license details, assigned vehicle, and default route assignment. Please ensure they complete the mandatory safety briefing and digital onboarding module before their first active route."
+    },
+    {
+        "id": 159,
+        "sender": "fleet@logisticshub.net",
+        "subject": "GPS tracker offline",
+        "body": "The GPS tracker on Vehicle 04 has gone offline and is no longer transmitting location data. This may be due to a hardware issue, signal loss, or tampering. Until the tracker is restored, manual check-ins will be required for that vehicle to maintain operational visibility."
+    },
+    {
+        "id": 160,
+        "sender": "fleet@logisticshub.net",
+        "subject": "Incident report submitted",
+        "body": "A driver has submitted an incident report for a minor road event that occurred during today's shift. The report is now available in your incident log for review. Please follow up with the driver and document any follow-up actions taken in the fleet management system."
+    },
+    {
+        "id": 161,
+        "sender": "hello@productlaunch.io",
+        "subject": "Beta access granted",
+        "body": "You have been granted access to our closed beta program. As an early access participant, you will be able to explore new features before they are released to the general public. Your feedback is invaluable in helping us refine the product. Welcome aboard the beta journey."
+    },
+    {
+        "id": 162,
+        "sender": "hello@productlaunch.io",
+        "subject": "Feature feedback requested",
+        "body": "Thank you for participating in our beta program. We would love to hear your thoughts on the new dashboard feature you have been using. Please take a few minutes to complete our short in-app survey or reply to this email with your honest impressions and suggestions."
+    },
+    {
+        "id": 163,
+        "sender": "hello@productlaunch.io",
+        "subject": "Beta bug report received",
+        "body": "We have received your bug report and our engineering team is investigating the issue you described. Thank you for taking the time to document and submit it. Bug reports from beta users like you are essential to improving the product before the official release launch."
+    },
+    {
+        "id": 164,
+        "sender": "hello@productlaunch.io",
+        "subject": "Launch announcement: public release",
+        "body": "We are thrilled to announce that the product is officially launching to the public today. After months of development and beta feedback, the full version is now available. As a beta participant, you will automatically be migrated to the launch version with all your data intact."
+    },
+    {
+        "id": 165,
+        "sender": "hello@productlaunch.io",
+        "subject": "New feature request logged",
+        "body": "Your feature request has been logged and shared with our product team. We review all submissions carefully and consider them during each planning cycle. While we cannot provide a timeline for implementation, your input directly shapes the future direction of the product."
+    },
+    {
+        "id": 166,
+        "sender": "hello@productlaunch.io",
+        "subject": "Changelog for this week",
+        "body": "This week's product changelog is now available and includes details on all updates, bug fixes, and new capabilities released in the latest build. We push updates regularly based on user feedback and internal testing. View the full changelog in the product documentation portal."
+    },
+    {
+        "id": 167,
+        "sender": "hello@productlaunch.io",
+        "subject": "Downtime scheduled for migration",
+        "body": "We will be performing a planned migration of our infrastructure this weekend to support the demands of the upcoming public launch. The service will be briefly unavailable during the migration window. We will send updates before, during, and after the maintenance period."
+    },
+    {
+        "id": 168,
+        "sender": "hello@productlaunch.io",
+        "subject": "Referral program launched",
+        "body": "We have launched a referral program that rewards you for inviting others to join our platform. For each person who signs up using your unique referral link, both you and the new user will receive account credits. Your referral link and tracking dashboard are in your account settings."
+    },
+    {
+        "id": 169,
+        "sender": "hello@productlaunch.io",
+        "subject": "Beta program closing soon",
+        "body": "Our closed beta program will be concluding at the end of this month ahead of the official public launch. We want to extend our sincere thanks to all participants for their time, feedback, and engagement throughout the program. Your contributions have made a real difference."
+    },
+    {
+        "id": 170,
+        "sender": "hello@productlaunch.io",
+        "subject": "Account migrated to production",
+        "body": "Your beta account has been successfully migrated to the production environment. All your data, settings, and preferences have been preserved. You can now log in using your existing credentials and enjoy the full release version. Welcome to the official launch of the platform."
+    },
+    {
+        "id": 171,
+        "sender": "auto@contractvault.io",
+        "subject": "Contract sent for signature",
+        "body": "A contract document has been sent to the recipient specified in your request. They will receive a signing link via email and can complete the signature process electronically. You will be notified as soon as the document has been viewed, signed, and finalized by all parties."
+    },
+    {
+        "id": 172,
+        "sender": "auto@contractvault.io",
+        "subject": "Signature received",
+        "body": "A signature has been received on the contract you sent out. The document now has all required signatures and has been finalized. A completed copy has been sent to all signing parties and is also available for download from your ContractVault document library."
+    },
+    {
+        "id": 173,
+        "sender": "auto@contractvault.io",
+        "subject": "Contract expiring soon",
+        "body": "One of the contracts in your vault is set to expire in 7 days. If the contract requires renewal, please initiate the renewal process or contact the other party to discuss extension terms. Expired contracts are archived automatically but can be retrieved from the archives."
+    },
+    {
+        "id": 174,
+        "sender": "auto@contractvault.io",
+        "subject": "Document viewed by recipient",
+        "body": "The contract you sent has been viewed by the recipient. They have not yet completed the signing process. You may wish to follow up with them if you require the document to be signed by a specific deadline. Viewing activity is tracked and logged in the document audit trail."
+    },
+    {
+        "id": 175,
+        "sender": "auto@contractvault.io",
+        "subject": "Contract declined",
+        "body": "The recipient has declined to sign the contract you sent. They provided the following reason during the declination process. Please review their comments and contact them to address any concerns before resending or creating an amended version of the document."
+    },
+    {
+        "id": 176,
+        "sender": "auto@contractvault.io",
+        "subject": "New template created",
+        "body": "A new contract template has been successfully created and saved to your template library. You can now use this template to quickly generate new contracts by populating the variable fields. Templates can be edited, duplicated, or deleted from your template management section."
+    },
+    {
+        "id": 177,
+        "sender": "auto@contractvault.io",
+        "subject": "Bulk signing initiated",
+        "body": "You have initiated a bulk contract signing request for multiple recipients. Each recipient will receive an individual email with their personalized signing link. You can monitor progress for each recipient in your bulk sending dashboard and send reminders as needed."
+    },
+    {
+        "id": 178,
+        "sender": "auto@contractvault.io",
+        "subject": "Audit trail downloaded",
+        "body": "The audit trail for your requested contract has been compiled and is ready for download. The trail includes timestamps and records of all actions taken on the document including views, edits, and signatures. This report can be used for compliance and record-keeping purposes."
+    },
+    {
+        "id": 179,
+        "sender": "auto@contractvault.io",
+        "subject": "Reminder sent to unsigned party",
+        "body": "An automatic reminder has been sent to the party who has not yet completed signing the contract. This is a configurable feature of your account's automation settings. If you would like to adjust the reminder schedule or disable automatic reminders, visit your account settings."
+    },
+    {
+        "id": 180,
+        "sender": "auto@contractvault.io",
+        "subject": "Vault storage quota reached",
+        "body": "Your ContractVault storage quota has been reached. You will not be able to upload new documents until you free up space or upgrade your storage plan. We recommend archiving older documents or deleting drafts that are no longer needed to create room for new uploads."
+    },
+    {
+        "id": 181,
+        "sender": "noreply@infrawatch.cloud",
+        "subject": "Server provisioning complete",
+        "body": "Your server provisioning request has been completed successfully. The new instance is now online and accessible via the credentials and connection details sent to your registered email. Please log in and complete the initial configuration steps as outlined in the setup guide."
+    },
+    {
+        "id": 182,
+        "sender": "noreply@infrawatch.cloud",
+        "subject": "Auto-scaling triggered",
+        "body": "Auto-scaling has been triggered in response to increased load on your application cluster. Additional instances have been spun up to handle the traffic. Monitor your dashboard to confirm that performance has stabilized and that the new instances are functioning correctly."
+    },
+    {
+        "id": 183,
+        "sender": "noreply@infrawatch.cloud",
+        "subject": "Backup completed successfully",
+        "body": "Your scheduled backup has completed successfully. All selected data and configurations have been securely stored. The backup is available in your storage vault and can be used for disaster recovery if needed. Next scheduled backup is listed in your backup policy settings."
+    },
+    {
+        "id": 184,
+        "sender": "noreply@infrawatch.cloud",
+        "subject": "Backup failed",
+        "body": "The scheduled backup for your environment failed to complete successfully. This may be due to a storage connectivity issue or insufficient quota. Our operations team has been notified and is investigating the cause. Please review the error details in your backup history log."
+    },
+    {
+        "id": 185,
+        "sender": "noreply@infrawatch.cloud",
+        "subject": "Instance terminated",
+        "body": "One of your cloud instances has been terminated as per your recent shutdown request. All associated ephemeral storage has been released. If you had data stored only on the instance's local disk without an attached volume, that data has not been retained post-termination."
+    },
+    {
+        "id": 186,
+        "sender": "noreply@infrawatch.cloud",
+        "subject": "Cost anomaly alert",
+        "body": "An unusual spike in infrastructure costs has been detected on your account this billing cycle. Current projected spend is significantly higher than your historical average. We recommend reviewing your active resources and identifying any unintended instances or over-provisioned configurations."
+    },
+    {
+        "id": 187,
+        "sender": "noreply@infrawatch.cloud",
+        "subject": "Network configuration updated",
+        "body": "A network configuration change has been applied to your cloud environment. This change includes updates to firewall rules and routing policies as requested. Please verify that your services are still accessible and behaving as expected following the configuration update."
+    },
+    {
+        "id": 188,
+        "sender": "noreply@infrawatch.cloud",
+        "subject": "Compliance check passed",
+        "body": "Your infrastructure environment has passed the latest automated compliance check. All monitored configurations align with the selected compliance framework. A compliance report with details on each check performed is available for download from your compliance management dashboard."
+    },
+    {
+        "id": 189,
+        "sender": "noreply@infrawatch.cloud",
+        "subject": "Region migration in progress",
+        "body": "The migration of your environment to the new data center region is currently in progress. Some services may experience brief interruptions during the transition. We will notify you when the migration is complete and all services have been verified in the new region."
+    },
+    {
+        "id": 190,
+        "sender": "noreply@infrawatch.cloud",
+        "subject": "IP address allocation",
+        "body": "New IP addresses have been allocated to your cloud environment as per your request. The assigned addresses are now active and can be used to configure your services and firewall rules. Full details of the allocated addresses are available in your network management panel."
+    },
+    {
+        "id": 191,
+        "sender": "ping@feedbackloop.app",
+        "subject": "New response on your survey",
+        "body": "A new response has been submitted for one of your active surveys. You can view the individual response details in your survey dashboard. As responses accumulate, aggregate insights and charts will be automatically updated to help you identify patterns in the collected data."
+    },
+    {
+        "id": 192,
+        "sender": "ping@feedbackloop.app",
+        "subject": "Survey response threshold reached",
+        "body": "Your survey has received 100 responses, which was the threshold you set for generating an insights report. A preliminary analysis has been compiled and is now available in your dashboard. The report highlights key themes and sentiment trends from the responses collected so far."
+    },
+    {
+        "id": 193,
+        "sender": "ping@feedbackloop.app",
+        "subject": "Survey link shared",
+        "body": "Your survey link has been shared successfully via the channels you selected. Respondents can access the survey through the unique link without needing to log in. You can monitor response rates and link performance in real time from your survey analytics overview."
+    },
+    {
+        "id": 194,
+        "sender": "ping@feedbackloop.app",
+        "subject": "Survey closed automatically",
+        "body": "Your survey has been closed automatically as it reached the response deadline you configured during setup. No new responses will be accepted from this point. The full dataset is available for analysis and export in your FeedbackLoop account dashboard anytime."
+    },
+    {
+        "id": 195,
+        "sender": "ping@feedbackloop.app",
+        "subject": "Negative sentiment spike",
+        "body": "Our sentiment analysis has flagged a spike in negative responses in your most recent survey batch. A cluster of responses contains recurring negative themes that may warrant closer attention. We recommend reviewing the flagged responses in detail to identify actionable feedback areas."
+    },
+    {
+        "id": 196,
+        "sender": "ping@feedbackloop.app",
+        "subject": "Report exported successfully",
+        "body": "Your survey report has been successfully exported in the format you selected. The export includes all response data, charts, and summary insights based on the filters you applied. The file is available for download from your export history for the next 30 days."
+    },
+    {
+        "id": 197,
+        "sender": "ping@feedbackloop.app",
+        "subject": "Collaborator invited to survey",
+        "body": "A collaborator has been invited to co-manage your survey. They will have access to view responses and make edits based on the permission level you assigned. You can manage collaborator permissions and revoke access at any time from the sharing settings of your survey."
+    },
+    {
+        "id": 198,
+        "sender": "ping@feedbackloop.app",
+        "subject": "Survey template saved",
+        "body": "Your custom survey template has been saved to your template library. The template includes all your configured questions, logic rules, and branding settings. You can use this template as a starting point for future surveys to maintain consistency and save setup time."
+    },
+    {
+        "id": 199,
+        "sender": "ping@feedbackloop.app",
+        "subject": "Response data anomaly detected",
+        "body": "Our system detected an anomaly in your survey response data. A high volume of responses from similar IP addresses within a short time window has been flagged as potentially suspicious. We recommend reviewing these responses and filtering them before analyzing the data set."
+    },
+    {
+        "id": 200,
+        "sender": "ping@feedbackloop.app",
+        "subject": "Monthly survey digest",
+        "body": "Your monthly survey activity digest is ready. It summarizes the surveys you ran this month, total responses collected, average completion rates, and top insights across all active feedback channels. Use this summary to gauge engagement and plan your next round of feedback initiatives."
     }
 ]
